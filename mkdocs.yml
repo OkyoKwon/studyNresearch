@@ -1,0 +1,96 @@
+site_name: "도메인 지식 스터디"
+site_description: "PG, MOR, 가상자산 규제 등 도메인 지식을 정리하는 스터디 사이트"
+site_url: ""
+docs_dir: docs
+
+theme:
+  name: material
+  language: ko
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: 다크 모드로 전환
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: 라이트 모드로 전환
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+
+nav:
+  - 홈: index.md
+  - PG 서비스:
+      - 개요: domains/pg-service/index.md
+      - 핵심 개념: domains/pg-service/concepts.md
+      - 결제 플로우: domains/pg-service/payment-flow.md
+      - 대표 제품:
+          - 비교 개요: domains/pg-service/products/index.md
+          - Stripe: domains/pg-service/products/stripe.md
+          - Toss Payments: domains/pg-service/products/toss-payments.md
+          - NHN KCP: domains/pg-service/products/nhn-kcp.md
+      - 트렌드: domains/pg-service/trends.md
+  - MOR 서비스:
+      - 개요: domains/mor-service/index.md
+      - 핵심 개념: domains/mor-service/concepts.md
+      - PG vs MOR 비교: domains/mor-service/pg-vs-mor.md
+      - 대표 제품:
+          - 비교 개요: domains/mor-service/products/index.md
+          - Paddle: domains/mor-service/products/paddle.md
+          - Lemon Squeezy: domains/mor-service/products/lemon-squeezy.md
+          - FastSpring: domains/mor-service/products/fastspring.md
+      - 트렌드: domains/mor-service/trends.md
+  - 가상자산 규제:
+      - 개요: domains/crypto-regulation/index.md
+      - 규제 프레임워크: domains/crypto-regulation/frameworks.md
+      - 국가별 현황:
+          - 개요: domains/crypto-regulation/by-country/index.md
+          - 한국: domains/crypto-regulation/by-country/korea.md
+          - 미국: domains/crypto-regulation/by-country/usa.md
+          - EU: domains/crypto-regulation/by-country/eu.md
+      - 관련 기관: domains/crypto-regulation/authorities.md
+      - 트렌드: domains/crypto-regulation/trends.md
+  - 가이드:
+      - 도메인 추가 가이드: guide/add-domain.md
+      - AI 프롬프트 템플릿: guide/ai-templates.md
+
+plugins:
+  - search:
+      lang: ko
+  - mermaid2
+
+markdown_extensions:
+  - toc:
+      permalink: true
+  - tables
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid_custom
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com

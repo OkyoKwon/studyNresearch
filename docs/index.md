@@ -33,6 +33,15 @@
 
     [가상자산 규제 바로가기 :material-arrow-right:](domains/crypto-regulation/index.md)
 
+-   :material-currency-usd:{ .lg .middle } **스테이블코인 규제**
+
+    ---
+
+    스테이블코인의 유형, 글로벌 규제 프레임워크, 주요 코인(USDT, USDC, DAI)을 분석합니다.
+    MiCA, GENIUS Act 등 최신 입법 동향을 다룹니다.
+
+    [스테이블코인 규제 바로가기 :material-arrow-right:](domains/stablecoin-regulation/index.md)
+
 </div>
 
 ## 사이트 사용법

@@ -62,6 +62,21 @@ nav:
           - EU: domains/crypto-regulation/by-country/eu.md
       - 관련 기관: domains/crypto-regulation/authorities.md
       - 트렌드: domains/crypto-regulation/trends.md
+  - 스테이블코인 규제:
+      - 개요: domains/stablecoin-regulation/index.md
+      - 핵심 개념: domains/stablecoin-regulation/concepts.md
+      - 규제 프레임워크: domains/stablecoin-regulation/frameworks.md
+      - 국가별 현황:
+          - 개요: domains/stablecoin-regulation/by-country/index.md
+          - 한국: domains/stablecoin-regulation/by-country/korea.md
+          - 미국: domains/stablecoin-regulation/by-country/usa.md
+          - EU: domains/stablecoin-regulation/by-country/eu.md
+      - 주요 스테이블코인:
+          - 비교 개요: domains/stablecoin-regulation/products/index.md
+          - USDT (Tether): domains/stablecoin-regulation/products/usdt.md
+          - USDC (Circle): domains/stablecoin-regulation/products/usdc.md
+          - DAI (MakerDAO): domains/stablecoin-regulation/products/dai.md
+      - 트렌드: domains/stablecoin-regulation/trends.md
   - 가이드:
       - 도메인 추가 가이드: guide/add-domain.md
       - AI 프롬프트 템플릿: guide/ai-templates.md

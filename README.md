@@ -11,6 +11,7 @@
 | **PG 서비스** | Payment Gateway 구조, 결제 플로우, PG사 비교 | Stripe, Toss Payments, NHN KCP |
 | **MOR 서비스** | Merchant of Record 모델, PG와의 차이 | Paddle, Lemon Squeezy, FastSpring |
 | **가상자산 규제** | 글로벌 규제 프레임워크, 국가별 현황 | FATF, SEC, 금융위원회, MiCA |
+| **스테이블코인 규제** | 스테이블코인 유형, 규제 프레임워크, 주요 코인 분석 | USDT, USDC, DAI, MiCA, GENIUS Act |
 
 ## 기술 스택
 
@@ -46,7 +47,8 @@ cp -r templates/domain-template/ docs/domains/{new-domain}/
 │   ├── domains/
 │   │   ├── pg-service/          # PG 서비스 (8개 문서)
 │   │   ├── mor-service/         # MOR 서비스 (8개 문서)
-│   │   └── crypto-regulation/   # 가상자산 규제 (8개 문서)
+│   │   ├── crypto-regulation/    # 가상자산 규제 (8개 문서)
+│   │   └── stablecoin-regulation/ # 스테이블코인 규제 (12개 문서)
 │   └── guide/                   # 도메인 추가 가이드, AI 템플릿
 ├── templates/domain-template/   # 새 도메인 추가용 템플릿
 ├── mkdocs.yml                   # MkDocs 설정

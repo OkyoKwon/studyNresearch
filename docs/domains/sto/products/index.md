@@ -3,6 +3,8 @@ tags:
   - 디지털자산
   - 토큰증권
   - STO
+search:
+  boost: 1.5
 ---
 # 주요 STO 플랫폼 비교
 

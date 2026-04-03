@@ -2,6 +2,8 @@
 tags:
   - 디지털자산
   - CBDC
+search:
+  boost: 2
 ---
 # CBDC (중앙은행 디지털화폐)
 
@@ -46,6 +48,9 @@ pie title 글로벌 CBDC 프로젝트 단계 (2026 기준)
     "개발 중" : 32
     "연구 단계" : 62
 ```
+
+!!! tip "학습 순서"
+    ① [핵심 개념](concepts.md) → ② [제품/사례 비교](products/index.md) → ③ [트렌드](trends.md)
 
 ## 이 섹션의 구성
 

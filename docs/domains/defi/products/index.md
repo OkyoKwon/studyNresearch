@@ -2,6 +2,8 @@
 tags:
   - 디지털자산
   - DeFi
+search:
+  boost: 1.5
 ---
 # 주요 DeFi 프로토콜 비교
 

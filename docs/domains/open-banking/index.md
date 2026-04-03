@@ -3,6 +3,8 @@ tags:
   - 금융
   - 오픈뱅킹
   - BaaS
+search:
+  boost: 2
 ---
 # 오픈뱅킹 / BaaS 개요
 
@@ -53,6 +55,9 @@ graph TB
 | **BaaS** | Banking as a Service, 은행 기능의 API 제공 |
 | **한국 오픈뱅킹** | 금융결제원 주관, 2019년 출범한 계좌 통합 서비스 |
 | **마이데이터** | 본인 금융정보를 한곳에서 관리하는 개인 데이터 주권 서비스 |
+
+!!! tip "학습 순서"
+    ① [핵심 개념](concepts.md) → ② [제품/사례 비교](products/index.md) → ③ [트렌드](trends.md)
 
 ## 관련 문서
 

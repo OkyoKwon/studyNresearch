@@ -2,6 +2,8 @@
 tags:
   - 결제
   - PG
+search:
+  boost: 1.5
 ---
 # PG (Payment Gateway) - 대표 제품 비교 개요
 

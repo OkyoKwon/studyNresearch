@@ -2,6 +2,8 @@
 tags:
   - 결제
   - 실시간결제
+search:
+  boost: 2
 ---
 # 실시간 결제 인프라 개요
 
@@ -69,6 +71,9 @@ graph LR
         SG --- AU[호주<br/>NPP/PayTo]
     end
 ```
+
+!!! tip "학습 순서"
+    ① [핵심 개념](concepts.md) → ② [제품/사례 비교](products/index.md) → ③ [트렌드](trends.md)
 
 ## 관련 문서
 

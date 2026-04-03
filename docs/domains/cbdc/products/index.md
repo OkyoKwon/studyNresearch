@@ -2,6 +2,8 @@
 tags:
   - 디지털자산
   - CBDC
+search:
+  boost: 1.5
 ---
 # 주요 CBDC 프로젝트 비교
 

@@ -2,6 +2,8 @@
 tags:
   - 결제
   - MOR
+search:
+  boost: 2
 ---
 # MOR(Merchant of Record) 서비스 개요
 
@@ -32,6 +34,9 @@ MOR (Merchant of Record)를 사용하면 이 모든 세금 처리, 규제 준수
 | **Tax Compliance** | 세금 규정 준수 (징수, 신고, 납부) |
 | **Chargeback** | 고객의 결제 이의 제기 처리 |
 | **Payment Localization** | 현지 통화, 결제 수단 지원 |
+
+!!! tip "학습 순서"
+    ① [핵심 개념](concepts.md) → ② [제품/사례 비교](products/index.md) → ③ [트렌드](trends.md)
 
 ## 하위 문서 목차
 

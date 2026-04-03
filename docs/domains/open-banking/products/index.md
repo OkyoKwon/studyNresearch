@@ -3,6 +3,8 @@ tags:
   - 금융
   - 오픈뱅킹
   - BaaS
+search:
+  boost: 1.5
 ---
 # 오픈뱅킹 / BaaS 제품 비교
 

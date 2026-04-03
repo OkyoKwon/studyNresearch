@@ -232,7 +232,9 @@ extra_css:
   - stylesheets/extra.css
   - stylesheets/mermaid-fix.css
 
+copyright: Copyright &copy; 2025 Okyo
+
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com
+      link: https://github.com/OkyoKwon/studyNresearch

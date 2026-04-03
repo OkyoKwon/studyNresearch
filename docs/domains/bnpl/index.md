@@ -2,6 +2,8 @@
 tags:
   - 결제
   - BNPL
+search:
+  boost: 2
 ---
 # BNPL (Buy Now Pay Later) 개요
 
@@ -49,6 +51,9 @@ graph TB
 | **가맹점 수수료** | BNPL 수익의 핵심, 거래액의 3~8% |
 | **신용평가** | BNPL 특화 실시간 심사, 전통 신용평점과 다름 |
 | **규제 강화** | 전 세계적으로 BNPL을 신용 상품으로 규제하는 추세 |
+
+!!! tip "학습 순서"
+    ① [핵심 개념](concepts.md) → ② [제품/사례 비교](products/index.md) → ③ [트렌드](trends.md)
 
 ## 관련 문서
 

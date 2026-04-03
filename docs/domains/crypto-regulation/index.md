@@ -3,6 +3,8 @@ tags:
   - 디지털자산
   - 규제
   - 가상자산
+search:
+  boost: 2
 ---
 # 가상자산 규제 개요
 
@@ -73,6 +75,9 @@ graph TD
     L --> O[공시/보고]
     L --> P[Travel Rule 이행]
 ```
+
+!!! tip "학습 순서"
+    ① [규제 프레임워크](frameworks.md) → ② [국가별 현황](by-country/index.md) → ③ [트렌드](trends.md)
 
 ## 하위 문서
 

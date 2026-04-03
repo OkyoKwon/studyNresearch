@@ -2,6 +2,8 @@
 tags:
   - 규제
   - 레그테크
+search:
+  boost: 2
 ---
 # 레그테크 (RegTech) 개요
 
@@ -77,6 +79,9 @@ flowchart TB
 | [데이터 규제](../data-regulation/index.md) | OneTrust, TrustArc | GDPR, 개인정보보호법, CCPA |
 | 거래 감시 | NICE Actimize, Behavox | MAR, MiFID II, 불공정거래 |
 | 규제 변경 관리 | Ascent, CUBE | 모든 규제 영역 |
+
+!!! tip "학습 순서"
+    ① [핵심 개념](concepts.md) → ② [제품/사례 비교](products/index.md) → ③ [트렌드](trends.md)
 
 ## 관련 개념
 

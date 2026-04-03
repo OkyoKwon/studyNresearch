@@ -2,6 +2,8 @@
 tags:
   - 비즈니스모델
   - SaaS
+search:
+  boost: 1.5
 ---
 # SaaS 비즈니스 모델 - 대표 제품 비교 개요
 

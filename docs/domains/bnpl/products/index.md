@@ -2,6 +2,8 @@
 tags:
   - 결제
   - BNPL
+search:
+  boost: 1.5
 ---
 # BNPL 제품 비교
 

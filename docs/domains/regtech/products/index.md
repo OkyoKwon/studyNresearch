@@ -2,6 +2,8 @@
 tags:
   - 규제
   - 레그테크
+search:
+  boost: 1.5
 ---
 # RegTech 솔루션 비교
 

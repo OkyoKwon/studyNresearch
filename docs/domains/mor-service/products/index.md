@@ -2,6 +2,8 @@
 tags:
   - 결제
   - MOR
+search:
+  boost: 1.5
 ---
 # MOR (Merchant of Record) - 대표 제품 비교 개요
 

@@ -3,6 +3,8 @@ tags:
   - 규제
   - AML
   - KYC
+search:
+  boost: 2
 ---
 # AML/KYC 개요
 
@@ -59,6 +61,9 @@ flowchart LR
 
 !!! tip "가상자산과 AML"
     2021년 특금법 개정으로 가상자산사업자(VASP)에도 AML/KYC 의무가 부과되었다. Travel Rule 적용으로 가상자산 이전 시 송수신인 정보 공유가 의무화되었다.
+
+!!! tip "학습 순서"
+    ① [핵심 개념](concepts.md) → ② [제품/사례 비교](products/index.md) → ③ [트렌드](trends.md)
 
 ## 관련 개념
 

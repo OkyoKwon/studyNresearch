@@ -3,6 +3,8 @@ tags:
   - 규제
   - AML
   - KYC
+search:
+  boost: 1.5
 ---
 # AML/KYC 솔루션 비교
 

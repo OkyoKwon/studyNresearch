@@ -2,6 +2,8 @@
 tags:
   - 비즈니스모델
   - SaaS
+search:
+  boost: 2
 ---
 # SaaS 비즈니스 모델 개요
 
@@ -50,6 +52,9 @@ graph LR
 ```
 
 ---
+
+!!! tip "학습 순서"
+    ① [핵심 개념](concepts.md) → ② [제품/사례 비교](products/index.md) → ③ [트렌드](trends.md)
 
 ## 하위 문서
 

@@ -2,6 +2,8 @@
 tags:
   - 결제
   - PG
+search:
+  boost: 2
 ---
 # PG (Payment Gateway) 개요
 
@@ -32,6 +34,9 @@ tags:
 | **3D Secure** | 카드 온라인 결제 시 본인인증 프로토콜 |
 
 ---
+
+!!! tip "학습 순서"
+    ① [핵심 개념](concepts.md) → ② [제품/사례 비교](products/index.md) → ③ [트렌드](trends.md)
 
 ## 하위 문서
 

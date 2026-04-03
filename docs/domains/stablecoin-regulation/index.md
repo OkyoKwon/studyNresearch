@@ -3,6 +3,8 @@ tags:
   - 디지털자산
   - 규제
   - 스테이블코인
+search:
+  boost: 2
 ---
 # 스테이블코인 규제 개요
 
@@ -81,6 +83,9 @@ timeline
 | **Significant Stablecoin** | MiCA 기준 시스템적으로 중요한 스테이블코인 (추가 규제 적용) |
 | **CBDC** | Central Bank Digital Currency. 중앙은행 디지털 화폐 |
 | **뱅크런(Bank Run)** | 대규모 동시 상환 요청으로 인한 유동성 위기 |
+
+!!! tip "학습 순서"
+    ① [핵심 개념](concepts.md) → ② [규제 프레임워크](frameworks.md) → ③ [주요 스테이블코인](products/index.md) → ④ [트렌드](trends.md)
 
 ## 하위 문서
 

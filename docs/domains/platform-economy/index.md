@@ -2,6 +2,8 @@
 tags:
   - 비즈니스모델
   - 플랫폼
+search:
+  boost: 2
 ---
 # 플랫폼 이코노미 개요
 
@@ -51,6 +53,9 @@ graph TD
 ```
 
 ---
+
+!!! tip "학습 순서"
+    ① [핵심 개념](concepts.md) → ② [제품/사례 비교](products/index.md) → ③ [트렌드](trends.md)
 
 ## 하위 문서
 

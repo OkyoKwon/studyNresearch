@@ -28,41 +28,44 @@
     ]
   };
 
-  function getBaseUrl() {
-    // Use __md_scope set by MkDocs Material
+  function findBaseUrl() {
+    // Method 1: Find "홈" tab and resolve its href as the site root
+    var homeTab = document.querySelector('.md-tabs__link');
+    if (homeTab) {
+      var tabs = document.querySelectorAll('.md-tabs__link');
+      for (var i = 0; i < tabs.length; i++) {
+        if (tabs[i].textContent.replace(/\s+/g, " ").trim() === "홈") {
+          // Create a temporary anchor to resolve the relative href to absolute
+          var a = document.createElement("a");
+          a.href = tabs[i].getAttribute("href");
+          var resolved = a.href;
+          // Ensure trailing slash
+          if (!resolved.endsWith("/")) resolved += "/";
+          return resolved;
+        }
+      }
+    }
+    // Method 2: Use __md_scope
     if (typeof __md_scope !== "undefined") {
       return __md_scope.href;
-    }
-    // Fallback: derive from the "홈" tab's href
-    var homeTab = document.querySelector('.md-tabs__link[href$="/"], .md-tabs__link[href="."], .md-tabs__link[href="./"]');
-    if (homeTab) {
-      var a = document.createElement("a");
-      a.href = homeTab.getAttribute("href");
-      return a.href.replace(/\/$/, "") + "/";
     }
     return window.location.origin + "/";
   }
 
   function buildDropdowns() {
-    // Remove old dropdowns
-    document.querySelectorAll(".tabs-dropdown").forEach(function (el) {
-      el.remove();
-    });
-    document.querySelectorAll(".tabs-dropdown-parent").forEach(function (el) {
-      el.classList.remove("tabs-dropdown-parent");
-    });
-
-    var baseUrl = getBaseUrl();
-    if (!baseUrl.endsWith("/")) baseUrl += "/";
+    var baseUrl = findBaseUrl();
 
     var tabs = document.querySelectorAll(".md-tabs__link");
+    if (!tabs.length) return;
+
     tabs.forEach(function (tab) {
-      // Extract text, stripping whitespace and inner elements
+      var tabItem = tab.parentElement;
+      if (tabItem.querySelector(".tabs-dropdown")) return;
+
       var text = tab.textContent.replace(/\s+/g, " ").trim();
       var items = DROPDOWNS[text];
       if (!items) return;
 
-      var tabItem = tab.parentElement;
       tabItem.classList.add("tabs-dropdown-parent");
 
       var dropdown = document.createElement("ul");
@@ -81,25 +84,28 @@
     });
   }
 
-  // Run on initial load
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", buildDropdowns);
-  } else {
+  // Run when DOM is ready
+  function init() {
     buildDropdowns();
   }
 
-  // Re-run after instant navigation page changes
-  if (typeof document$ !== "undefined") {
-    document$.subscribe(function () {
-      buildDropdowns();
-    });
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
   } else {
-    // Fallback: observe for instant navigation via MutationObserver
-    var observer = new MutationObserver(function () {
-      if (document.querySelector(".md-tabs__link") && !document.querySelector(".tabs-dropdown")) {
-        buildDropdowns();
-      }
-    });
-    observer.observe(document.body, { childList: true, subtree: true });
+    init();
   }
+
+  // Also run on window load as safety net
+  window.addEventListener("load", init);
+
+  // Handle MkDocs Material instant navigation
+  // The tabs DOM is preserved across instant navigation, so MutationObserver
+  // watches for any tab re-renders
+  new MutationObserver(function () {
+    var hasTabs = document.querySelector(".md-tabs__link");
+    var hasDropdown = document.querySelector(".tabs-dropdown");
+    if (hasTabs && !hasDropdown) {
+      buildDropdowns();
+    }
+  }).observe(document.documentElement, { childList: true, subtree: true });
 })();

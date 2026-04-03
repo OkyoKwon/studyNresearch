@@ -1,6 +1,6 @@
 site_name: "Okyo's Domain Wiki"
 site_description: "결제, 디지털 자산, 규제, 비즈니스 모델 등 도메인 지식을 정리하는 개인 위키"
-site_url: ""
+site_url: "https://okyokwon.github.io/studyNresearch/"
 docs_dir: docs
 
 theme:

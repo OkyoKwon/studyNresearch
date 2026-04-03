@@ -1,5 +1,5 @@
 site_name: "Okyo's Domain Wiki"
-site_description: "PG, MOR, 가상자산 규제 등 도메인 지식을 정리하는 개인 위키"
+site_description: "결제, 디지털 자산, 규제, 비즈니스 모델 등 도메인 지식을 정리하는 개인 위키"
 site_url: ""
 docs_dir: docs
 
@@ -23,6 +23,7 @@ theme:
         name: 라이트 모드로 전환
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
     - navigation.expand
     - navigation.top
@@ -32,51 +33,163 @@ theme:
 
 nav:
   - 홈: index.md
-  - PG (Payment Gateway):
-      - 개요: domains/pg-service/index.md
-      - 핵심 개념: domains/pg-service/concepts.md
-      - 결제 플로우: domains/pg-service/payment-flow.md
-      - 대표 제품:
-          - 비교 개요: domains/pg-service/products/index.md
-          - Stripe: domains/pg-service/products/stripe.md
-          - Toss Payments: domains/pg-service/products/toss-payments.md
-          - NHN KCP: domains/pg-service/products/nhn-kcp.md
-      - 트렌드: domains/pg-service/trends.md
-  - MOR (Merchant of Record):
-      - 개요: domains/mor-service/index.md
-      - 핵심 개념: domains/mor-service/concepts.md
-      - PG vs MOR 비교: domains/mor-service/pg-vs-mor.md
-      - 대표 제품:
-          - 비교 개요: domains/mor-service/products/index.md
-          - Paddle: domains/mor-service/products/paddle.md
-          - Lemon Squeezy: domains/mor-service/products/lemon-squeezy.md
-          - FastSpring: domains/mor-service/products/fastspring.md
-      - 트렌드: domains/mor-service/trends.md
-  - 가상자산 규제:
-      - 개요: domains/crypto-regulation/index.md
-      - 규제 프레임워크: domains/crypto-regulation/frameworks.md
-      - 국가별 현황:
-          - 개요: domains/crypto-regulation/by-country/index.md
-          - 한국: domains/crypto-regulation/by-country/korea.md
-          - 미국: domains/crypto-regulation/by-country/usa.md
-          - EU: domains/crypto-regulation/by-country/eu.md
-      - 관련 기관: domains/crypto-regulation/authorities.md
-      - 트렌드: domains/crypto-regulation/trends.md
-  - 스테이블코인 규제:
-      - 개요: domains/stablecoin-regulation/index.md
-      - 핵심 개념: domains/stablecoin-regulation/concepts.md
-      - 규제 프레임워크: domains/stablecoin-regulation/frameworks.md
-      - 국가별 현황:
-          - 개요: domains/stablecoin-regulation/by-country/index.md
-          - 한국: domains/stablecoin-regulation/by-country/korea.md
-          - 미국: domains/stablecoin-regulation/by-country/usa.md
-          - EU: domains/stablecoin-regulation/by-country/eu.md
-      - 주요 스테이블코인:
-          - 비교 개요: domains/stablecoin-regulation/products/index.md
-          - USDT (Tether): domains/stablecoin-regulation/products/usdt.md
-          - USDC (Circle): domains/stablecoin-regulation/products/usdc.md
-          - DAI (MakerDAO): domains/stablecoin-regulation/products/dai.md
-      - 트렌드: domains/stablecoin-regulation/trends.md
+  - 결제/금융 인프라:
+      - PG (Payment Gateway):
+          - 개요: domains/pg-service/index.md
+          - 핵심 개념: domains/pg-service/concepts.md
+          - 결제 플로우: domains/pg-service/payment-flow.md
+          - 대표 제품:
+              - 비교 개요: domains/pg-service/products/index.md
+              - Stripe: domains/pg-service/products/stripe.md
+              - Toss Payments: domains/pg-service/products/toss-payments.md
+              - NHN KCP: domains/pg-service/products/nhn-kcp.md
+          - 트렌드: domains/pg-service/trends.md
+      - MOR (Merchant of Record):
+          - 개요: domains/mor-service/index.md
+          - 핵심 개념: domains/mor-service/concepts.md
+          - PG vs MOR 비교: domains/mor-service/pg-vs-mor.md
+          - 대표 제품:
+              - 비교 개요: domains/mor-service/products/index.md
+              - Paddle: domains/mor-service/products/paddle.md
+              - Lemon Squeezy: domains/mor-service/products/lemon-squeezy.md
+              - FastSpring: domains/mor-service/products/fastspring.md
+          - 트렌드: domains/mor-service/trends.md
+      - 오픈뱅킹 / BaaS:
+          - 개요: domains/open-banking/index.md
+          - 핵심 개념: domains/open-banking/concepts.md
+          - 대표 제품:
+              - 비교 개요: domains/open-banking/products/index.md
+              - Plaid: domains/open-banking/products/plaid.md
+              - Unit: domains/open-banking/products/unit.md
+              - 한국 오픈뱅킹: domains/open-banking/products/korea-openbanking.md
+          - 트렌드: domains/open-banking/trends.md
+      - BNPL (Buy Now Pay Later):
+          - 개요: domains/bnpl/index.md
+          - 핵심 개념: domains/bnpl/concepts.md
+          - 대표 제품:
+              - 비교 개요: domains/bnpl/products/index.md
+              - Klarna: domains/bnpl/products/klarna.md
+              - Afterpay: domains/bnpl/products/afterpay.md
+              - 네이버페이 후결제: domains/bnpl/products/naverpay.md
+          - 트렌드: domains/bnpl/trends.md
+      - 임베디드 금융 (Embedded Finance):
+          - 개요: domains/embedded-finance/index.md
+          - 핵심 개념: domains/embedded-finance/concepts.md
+          - 대표 제품:
+              - 비교 개요: domains/embedded-finance/products/index.md
+              - Stripe Treasury: domains/embedded-finance/products/stripe-treasury.md
+              - Shopify Balance: domains/embedded-finance/products/shopify-balance.md
+              - Unit: domains/embedded-finance/products/unit.md
+          - 트렌드: domains/embedded-finance/trends.md
+      - 실시간 결제 인프라:
+          - 개요: domains/realtime-payment/index.md
+          - 핵심 개념: domains/realtime-payment/concepts.md
+          - 대표 시스템:
+              - 비교 개요: domains/realtime-payment/products/index.md
+              - FedNow: domains/realtime-payment/products/fednow.md
+              - UPI (인도): domains/realtime-payment/products/upi.md
+              - PIX (브라질): domains/realtime-payment/products/pix.md
+          - 트렌드: domains/realtime-payment/trends.md
+  - 디지털 자산/Web3:
+      - 가상자산 규제:
+          - 개요: domains/crypto-regulation/index.md
+          - 규제 프레임워크: domains/crypto-regulation/frameworks.md
+          - 국가별 현황:
+              - 개요: domains/crypto-regulation/by-country/index.md
+              - 한국: domains/crypto-regulation/by-country/korea.md
+              - 미국: domains/crypto-regulation/by-country/usa.md
+              - EU: domains/crypto-regulation/by-country/eu.md
+          - 관련 기관: domains/crypto-regulation/authorities.md
+          - 트렌드: domains/crypto-regulation/trends.md
+      - 스테이블코인 규제:
+          - 개요: domains/stablecoin-regulation/index.md
+          - 핵심 개념: domains/stablecoin-regulation/concepts.md
+          - 규제 프레임워크: domains/stablecoin-regulation/frameworks.md
+          - 국가별 현황:
+              - 개요: domains/stablecoin-regulation/by-country/index.md
+              - 한국: domains/stablecoin-regulation/by-country/korea.md
+              - 미국: domains/stablecoin-regulation/by-country/usa.md
+              - EU: domains/stablecoin-regulation/by-country/eu.md
+          - 주요 스테이블코인:
+              - 비교 개요: domains/stablecoin-regulation/products/index.md
+              - USDT (Tether): domains/stablecoin-regulation/products/usdt.md
+              - USDC (Circle): domains/stablecoin-regulation/products/usdc.md
+              - DAI (MakerDAO): domains/stablecoin-regulation/products/dai.md
+          - 트렌드: domains/stablecoin-regulation/trends.md
+      - CBDC (중앙은행 디지털화폐):
+          - 개요: domains/cbdc/index.md
+          - 핵심 개념: domains/cbdc/concepts.md
+          - 주요 프로젝트:
+              - 비교 개요: domains/cbdc/products/index.md
+              - 디지털 원화: domains/cbdc/products/digital-won.md
+              - e-CNY (중국): domains/cbdc/products/e-cny.md
+              - Digital Euro: domains/cbdc/products/digital-euro.md
+          - 트렌드: domains/cbdc/trends.md
+      - 토큰증권 (STO):
+          - 개요: domains/sto/index.md
+          - 핵심 개념: domains/sto/concepts.md
+          - 대표 플랫폼:
+              - 비교 개요: domains/sto/products/index.md
+              - Securitize: domains/sto/products/securitize.md
+              - Polymath: domains/sto/products/polymath.md
+              - 한국 STO: domains/sto/products/korea-sto.md
+          - 트렌드: domains/sto/trends.md
+      - DeFi 프로토콜:
+          - 개요: domains/defi/index.md
+          - 핵심 개념: domains/defi/concepts.md
+          - 대표 프로토콜:
+              - 비교 개요: domains/defi/products/index.md
+              - Uniswap: domains/defi/products/uniswap.md
+              - Aave: domains/defi/products/aave.md
+              - MakerDAO: domains/defi/products/makerdao.md
+          - 트렌드: domains/defi/trends.md
+  - 규제/컴플라이언스:
+      - AML/KYC:
+          - 개요: domains/aml-kyc/index.md
+          - 핵심 개념: domains/aml-kyc/concepts.md
+          - 대표 솔루션:
+              - 비교 개요: domains/aml-kyc/products/index.md
+              - Chainalysis: domains/aml-kyc/products/chainalysis.md
+              - Jumio: domains/aml-kyc/products/jumio.md
+              - Sumsub: domains/aml-kyc/products/sumsub.md
+          - 트렌드: domains/aml-kyc/trends.md
+      - 데이터 규제 (개인정보):
+          - 개요: domains/data-regulation/index.md
+          - 핵심 개념: domains/data-regulation/concepts.md
+          - 주요 규제:
+              - 비교 개요: domains/data-regulation/products/index.md
+              - GDPR: domains/data-regulation/products/gdpr.md
+              - 한국 개인정보보호법: domains/data-regulation/products/korea-pipa.md
+              - CCPA: domains/data-regulation/products/ccpa.md
+          - 트렌드: domains/data-regulation/trends.md
+      - 레그테크 (RegTech):
+          - 개요: domains/regtech/index.md
+          - 핵심 개념: domains/regtech/concepts.md
+          - 대표 솔루션:
+              - 비교 개요: domains/regtech/products/index.md
+              - ComplyAdvantage: domains/regtech/products/complyadvantage.md
+              - Sumsub: domains/regtech/products/sumsub.md
+              - Chainalysis KYT: domains/regtech/products/chainalysis-kyt.md
+          - 트렌드: domains/regtech/trends.md
+  - 비즈니스 모델:
+      - SaaS 비즈니스 모델:
+          - 개요: domains/saas-business/index.md
+          - 핵심 개념: domains/saas-business/concepts.md
+          - 대표 사례:
+              - 비교 개요: domains/saas-business/products/index.md
+              - Notion: domains/saas-business/products/notion.md
+              - Figma: domains/saas-business/products/figma.md
+              - Slack: domains/saas-business/products/slack.md
+          - 트렌드: domains/saas-business/trends.md
+      - 플랫폼 이코노미:
+          - 개요: domains/platform-economy/index.md
+          - 핵심 개념: domains/platform-economy/concepts.md
+          - 대표 플랫폼:
+              - 비교 개요: domains/platform-economy/products/index.md
+              - 배달의민족: domains/platform-economy/products/baemin.md
+              - Uber: domains/platform-economy/products/uber.md
+              - Airbnb: domains/platform-economy/products/airbnb.md
+          - 트렌드: domains/platform-economy/trends.md
   - 가이드:
       - 도메인 추가 가이드: guide/add-domain.md
       - AI 프롬프트 템플릿: guide/ai-templates.md

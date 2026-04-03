@@ -28,7 +28,7 @@ graph TD
 
     ORACLE[Chainlink 오라클] -->|가격 피드| POOL
     POOL -->|담보 부족 시| LIQUIDATOR[청산자]
-    LIQUIDATOR -->|담보 매입 (할인)| POOL
+    LIQUIDATOR -->|"담보 매입 (할인)"| POOL
 ```
 
 | 항목 | 내용 |

@@ -4,24 +4,11 @@ hide:
   - toc
 ---
 
-<div class="hero" markdown>
+# Okyo's Domain Wiki
 
-# :material-domain: Okyo's Domain Wiki
+> 각 분야의 도메인 지식을 체계적으로 정리하는 개인 스터디 사이트입니다.
 
-**핀테크, 결제, Web3, 규제** 도메인 지식을 체계적으로 정리하는 개인 위키
-
-<div class="hero-stats" markdown>
-
-**16** 도메인  |  **85+** 문서  |  **4** 카테고리
-
-</div>
-
-[도메인 탐색 :material-arrow-down:](#payment){ .md-button .md-button--primary }
-[검색하기 :material-magnify:](#){ .md-button }
-
-</div>
-
-<div class="section-header section-payment" id="payment" markdown>
+<div class="section-header section-payment" markdown>
 ## :material-credit-card-multiple: 결제/금융 인프라
 </div>
 

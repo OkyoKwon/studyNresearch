@@ -1,3 +1,8 @@
+---
+tags:
+  - 결제
+  - MOR
+---
 # MOR (Merchant of Record) - 핵심 개념
 
 > MOR 도메인을 이해하기 위한 핵심 용어와 개념을 정리한다.

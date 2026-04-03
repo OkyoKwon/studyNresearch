@@ -5,19 +5,21 @@ docs_dir: docs
 
 theme:
   name: material
+  custom_dir: docs/overrides
   language: ko
+  font: false
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: indigo
-      accent: indigo
+      accent: deep orange
       toggle:
         icon: material/brightness-7
         name: 다크 모드로 전환
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: indigo
-      accent: indigo
+      accent: deep orange
       toggle:
         icon: material/brightness-4
         name: 라이트 모드로 전환
@@ -25,8 +27,12 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
-    - navigation.expand
     - navigation.top
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.path
+    - navigation.indexes
+    - toc.follow
     - search.suggest
     - search.highlight
     - content.tabs.link
@@ -193,10 +199,12 @@ nav:
   - 가이드:
       - 도메인 추가 가이드: guide/add-domain.md
       - AI 프롬프트 템플릿: guide/ai-templates.md
+  - 태그 색인: tags.md
 
 plugins:
   - search:
       lang: ko
+  - tags
   - mermaid2
 
 markdown_extensions:
@@ -221,6 +229,7 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 extra_css:
+  - stylesheets/extra.css
   - stylesheets/mermaid-fix.css
 
 extra:

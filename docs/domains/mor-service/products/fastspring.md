@@ -1,3 +1,8 @@
+---
+tags:
+  - 결제
+  - MOR
+---
 # FastSpring
 
 > 상위 문서: [제품 비교 개요](./index.md) | [MOR (Merchant of Record) 개요](../index.md)

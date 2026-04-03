@@ -1,3 +1,9 @@
+---
+tags:
+  - 규제
+  - AML
+  - KYC
+---
 # AML/KYC 핵심 개념
 
 ## AML vs CFT

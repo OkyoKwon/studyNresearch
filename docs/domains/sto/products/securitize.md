@@ -1,3 +1,9 @@
+---
+tags:
+  - 디지털자산
+  - 토큰증권
+  - STO
+---
 # Securitize
 
 **Securitize**는 미국 SEC에 등록된 Transfer Agent이자 ATS 운영사로, BlackRock BUIDL 펀드의 기술 파트너로서 기관급 RWA 토큰화의 사실상 글로벌 표준을 구축하고 있는 풀스택 토큰증권 플랫폼이다.

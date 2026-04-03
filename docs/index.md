@@ -1,8 +1,29 @@
-# Okyo's Domain Wiki
+---
+hide:
+  - navigation
+  - toc
+---
 
-> 각 분야의 도메인 지식을 체계적으로 정리하는 개인 스터디 사이트입니다.
+<div class="hero" markdown>
 
-## 결제/금융 인프라
+# :material-domain: Okyo's Domain Wiki
+
+**핀테크, 결제, Web3, 규제** 도메인 지식을 체계적으로 정리하는 개인 위키
+
+<div class="hero-stats" markdown>
+
+**16** 도메인  |  **85+** 문서  |  **4** 카테고리
+
+</div>
+
+[도메인 탐색 :material-arrow-down:](#payment){ .md-button .md-button--primary }
+[검색하기 :material-magnify:](#){ .md-button }
+
+</div>
+
+<div class="section-header section-payment" id="payment" markdown>
+## :material-credit-card-multiple: 결제/금융 인프라
+</div>
 
 <div class="grid cards" markdown>
 
@@ -56,7 +77,9 @@
 
 </div>
 
-## 디지털 자산/Web3
+<div class="section-header section-web3" markdown>
+## :material-ethereum: 디지털 자산/Web3
+</div>
 
 <div class="grid cards" markdown>
 
@@ -102,7 +125,9 @@
 
 </div>
 
-## 규제/컴플라이언스
+<div class="section-header section-compliance" markdown>
+## :material-shield-check: 규제/컴플라이언스
+</div>
 
 <div class="grid cards" markdown>
 
@@ -132,7 +157,9 @@
 
 </div>
 
-## 비즈니스 모델
+<div class="section-header section-business" markdown>
+## :material-lightbulb-outline: 비즈니스 모델
+</div>
 
 <div class="grid cards" markdown>
 
@@ -154,12 +181,12 @@
 
 </div>
 
-## 사이트 사용법
+??? info "사이트 사용법"
 
-| 기능 | 방법 |
-|------|------|
-| **도메인 탐색** | 상단 탭에서 카테고리 선택 → 사이드바에서 도메인 선택 |
-| **키워드 검색** | 우측 상단 검색 아이콘 (단축키: `/`) |
-| **테마 전환** | 우측 상단 밝기 아이콘으로 다크/라이트 전환 |
-| **새 도메인 추가** | [도메인 추가 가이드](guide/add-domain.md) 참고 |
-| **AI 콘텐츠 작성** | [AI 프롬프트 템플릿](guide/ai-templates.md) 활용 |
+    | 기능 | 방법 |
+    |------|------|
+    | **도메인 탐색** | 상단 탭에서 카테고리 선택 → 사이드바에서 도메인 선택 |
+    | **키워드 검색** | 우측 상단 검색 아이콘 (단축키: `/`) |
+    | **테마 전환** | 우측 상단 밝기 아이콘으로 다크/라이트 전환 |
+    | **새 도메인 추가** | [도메인 추가 가이드](guide/add-domain.md) 참고 |
+    | **AI 콘텐츠 작성** | [AI 프롬프트 템플릿](guide/ai-templates.md) 활용 |

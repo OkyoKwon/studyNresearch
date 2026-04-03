@@ -1,3 +1,8 @@
+---
+tags:
+  - 결제
+  - 실시간결제
+---
 # UPI (Unified Payments Interface)
 
 ## 기본 정보

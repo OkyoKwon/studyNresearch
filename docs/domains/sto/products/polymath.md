@@ -1,3 +1,9 @@
+---
+tags:
+  - 디지털자산
+  - 토큰증권
+  - STO
+---
 # Polymath / Polymesh
 
 **Polymath**는 토큰증권 전용 블록체인 **Polymesh**를 개발·운영하는 프로젝트로, 블록체인 레이어에서 신원 확인, 규제 준수, 거버넌스를 네이티브로 내장하여 "compliance by design"을 극대화한 접근을 취한다.

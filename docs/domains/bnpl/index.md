@@ -1,3 +1,8 @@
+---
+tags:
+  - 결제
+  - BNPL
+---
 # BNPL (Buy Now Pay Later) 개요
 
 ## 정의

@@ -1,3 +1,8 @@
+---
+tags:
+  - 결제
+  - MOR
+---
 # PG vs MOR 비교
 
 > PG(Payment Gateway)와 MOR(Merchant of Record)의 차이를 명확히 이해하고, 비즈니스 상황에 맞는 선택을 할 수 있도록 정리한다.

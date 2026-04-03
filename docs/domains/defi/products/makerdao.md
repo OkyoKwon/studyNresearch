@@ -1,3 +1,8 @@
+---
+tags:
+  - 디지털자산
+  - DeFi
+---
 # MakerDAO (Sky Protocol)
 
 **MakerDAO**는 DeFi 최초이자 최대의 탈중앙화 스테이블코인 **DAI**를 발행하는 프로토콜로, CDP(Collateralized Debt Position) 모델을 창시했으며, 2024년 **Sky Protocol**로 리브랜딩하면서 RWA(실물자산) 투자를 대폭 확대하고 있다.

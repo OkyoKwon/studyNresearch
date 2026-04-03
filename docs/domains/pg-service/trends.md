@@ -1,3 +1,8 @@
+---
+tags:
+  - 결제
+  - PG
+---
 # PG (Payment Gateway) - 트렌드 및 전망
 
 > 결제 산업의 최신 트렌드와 PG (Payment Gateway)의 미래 방향을 다룬다. 2025년 기준 주요 변화와 전망을 정리한다.

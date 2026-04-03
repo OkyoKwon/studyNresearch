@@ -1,3 +1,8 @@
+---
+tags:
+  - 결제
+  - MOR
+---
 # MOR (Merchant of Record) - 대표 제품 비교 개요
 
 > 주요 MOR (Merchant of Record)를 비교하고, 비즈니스 유형에 맞는 선택 가이드를 제공한다.

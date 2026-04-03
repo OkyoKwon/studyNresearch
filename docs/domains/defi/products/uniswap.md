@@ -1,3 +1,8 @@
+---
+tags:
+  - 디지털자산
+  - DeFi
+---
 # Uniswap
 
 **Uniswap**은 Ethereum 기반 탈중앙화 거래소(DEX) 1위 프로토콜로, AMM(Automated Market Maker) 모델을 창시하여 DeFi 생태계의 기반 인프라를 구축했으며, v4에서 Hooks를 도입하여 맞춤형 풀 로직의 새로운 패러다임을 열었다.

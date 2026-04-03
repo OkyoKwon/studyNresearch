@@ -1,3 +1,8 @@
+---
+tags:
+  - 결제
+  - BNPL
+---
 # Afterpay
 
 ## 기본 정보

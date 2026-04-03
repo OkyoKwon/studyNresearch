@@ -1,3 +1,8 @@
+---
+tags:
+  - 결제
+  - MOR
+---
 # MOR (Merchant of Record) - 트렌드 및 전망
 
 > MOR 시장의 현재 동향과 미래 전망을 정리한다.

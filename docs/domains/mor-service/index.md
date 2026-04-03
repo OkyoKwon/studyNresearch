@@ -1,3 +1,8 @@
+---
+tags:
+  - 결제
+  - MOR
+---
 # MOR(Merchant of Record) 서비스 개요
 
 ## MOR이란 무엇인가

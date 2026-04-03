@@ -1,3 +1,8 @@
+---
+tags:
+  - 규제
+  - 레그테크
+---
 # 레그테크 핵심 개념
 
 ## RegTech vs SupTech vs FinTech

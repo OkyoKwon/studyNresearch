@@ -1,3 +1,9 @@
+---
+tags:
+  - 규제
+  - 개인정보
+  - 데이터
+---
 # GDPR (General Data Protection Regulation)
 
 ## 정의

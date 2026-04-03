@@ -1,3 +1,8 @@
+---
+tags:
+  - 결제
+  - PG
+---
 # PG (Payment Gateway) - 대표 제품 비교 개요
 
 > 국내외 주요 PG (Payment Gateway)를 비교하고, 상황별 선택 가이드를 제공한다.

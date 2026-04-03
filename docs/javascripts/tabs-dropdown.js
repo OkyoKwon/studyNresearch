@@ -1,5 +1,7 @@
-document.addEventListener("DOMContentLoaded", function () {
-  var dropdowns = {
+(function () {
+  "use strict";
+
+  var DROPDOWNS = {
     "결제/금융 인프라": [
       { label: "PG (Payment Gateway)", path: "domains/pg-service/" },
       { label: "MOR (Merchant of Record)", path: "domains/mor-service/" },
@@ -26,20 +28,38 @@ document.addEventListener("DOMContentLoaded", function () {
     ]
   };
 
+  function getBaseUrl() {
+    // Use __md_scope set by MkDocs Material
+    if (typeof __md_scope !== "undefined") {
+      return __md_scope.href;
+    }
+    // Fallback: derive from the "홈" tab's href
+    var homeTab = document.querySelector('.md-tabs__link[href$="/"], .md-tabs__link[href="."], .md-tabs__link[href="./"]');
+    if (homeTab) {
+      var a = document.createElement("a");
+      a.href = homeTab.getAttribute("href");
+      return a.href.replace(/\/$/, "") + "/";
+    }
+    return window.location.origin + "/";
+  }
+
   function buildDropdowns() {
-    // Remove existing dropdowns (for instant navigation re-renders)
+    // Remove old dropdowns
     document.querySelectorAll(".tabs-dropdown").forEach(function (el) {
       el.remove();
     });
+    document.querySelectorAll(".tabs-dropdown-parent").forEach(function (el) {
+      el.classList.remove("tabs-dropdown-parent");
+    });
 
-    var siteRoot = typeof __md_scope !== "undefined"
-      ? __md_scope.pathname
-      : "/";
+    var baseUrl = getBaseUrl();
+    if (!baseUrl.endsWith("/")) baseUrl += "/";
 
     var tabs = document.querySelectorAll(".md-tabs__link");
     tabs.forEach(function (tab) {
-      var text = tab.textContent.trim();
-      var items = dropdowns[text];
+      // Extract text, stripping whitespace and inner elements
+      var text = tab.textContent.replace(/\s+/g, " ").trim();
+      var items = DROPDOWNS[text];
       if (!items) return;
 
       var tabItem = tab.parentElement;
@@ -51,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
       items.forEach(function (item) {
         var li = document.createElement("li");
         var a = document.createElement("a");
-        a.href = siteRoot + item.path;
+        a.href = baseUrl + item.path;
         a.textContent = item.label;
         li.appendChild(a);
         dropdown.appendChild(li);
@@ -61,12 +81,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  buildDropdowns();
+  // Run on initial load
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", buildDropdowns);
+  } else {
+    buildDropdowns();
+  }
 
-  // Re-build after instant navigation page change
+  // Re-run after instant navigation page changes
   if (typeof document$ !== "undefined") {
     document$.subscribe(function () {
       buildDropdowns();
     });
+  } else {
+    // Fallback: observe for instant navigation via MutationObserver
+    var observer = new MutationObserver(function () {
+      if (document.querySelector(".md-tabs__link") && !document.querySelector(".tabs-dropdown")) {
+        buildDropdowns();
+      }
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
   }
-});
+})();

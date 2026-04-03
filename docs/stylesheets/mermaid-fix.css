@@ -1,0 +1,29 @@
+/* Mermaid 다이어그램 다크모드 텍스트 가독성 수정 */
+/* 다크모드(slate)에서 Mermaid SVG 내부 텍스트를 진한 색으로 강제 */
+
+[data-md-color-scheme="slate"] .mermaid text,
+[data-md-color-scheme="slate"] .mermaid .label,
+[data-md-color-scheme="slate"] .mermaid .taskText,
+[data-md-color-scheme="slate"] .mermaid .sectionTitle,
+[data-md-color-scheme="slate"] .mermaid .titleText,
+[data-md-color-scheme="slate"] .mermaid .loopText,
+[data-md-color-scheme="slate"] .mermaid .noteText,
+[data-md-color-scheme="slate"] .mermaid .labelText,
+[data-md-color-scheme="slate"] .mermaid .cluster-label,
+[data-md-color-scheme="slate"] .mermaid .node .label,
+[data-md-color-scheme="slate"] .mermaid .edgeLabel,
+[data-md-color-scheme="slate"] .mermaid .messageText,
+[data-md-color-scheme="slate"] .mermaid .actor,
+[data-md-color-scheme="slate"] .mermaid .legend text,
+[data-md-color-scheme="slate"] .mermaid tspan {
+  fill: #1a1a1a !important;
+  color: #1a1a1a !important;
+}
+
+/* timeline 다이어그램 전용 */
+[data-md-color-scheme="slate"] .mermaid .timeline-text,
+[data-md-color-scheme="slate"] .mermaid .event-text,
+[data-md-color-scheme="slate"] .mermaid .period-text {
+  fill: #1a1a1a !important;
+  color: #1a1a1a !important;
+}

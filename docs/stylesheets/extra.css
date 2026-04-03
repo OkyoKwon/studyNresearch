@@ -48,16 +48,25 @@
 
 /* ---- 4. Tabs Dropdown ---- */
 
-.tabs-dropdown-parent {
-  position: relative;
+.md-tabs__item.tabs-dropdown-parent {
+  position: relative !important;
+  overflow: visible !important;
+}
+
+.md-tabs__list {
+  overflow: visible !important;
+}
+
+.md-tabs {
+  overflow: visible !important;
 }
 
 .tabs-dropdown {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 10;
+  display: none !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  z-index: 9999 !important;
   min-width: 240px;
   margin: 0;
   padding: 0.4rem 0;
@@ -68,16 +77,21 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
-.tabs-dropdown-parent:hover > .tabs-dropdown {
-  display: block;
+.md-tabs__item.tabs-dropdown-parent:hover > .tabs-dropdown {
+  display: block !important;
+}
+
+.tabs-dropdown li {
+  display: list-item !important;
+  list-style: none;
 }
 
 .tabs-dropdown li a {
-  display: block;
+  display: block !important;
   padding: 0.5rem 1rem;
   font-size: 0.78rem;
   color: var(--md-default-fg-color) !important;
-  text-decoration: none;
+  text-decoration: none !important;
   white-space: nowrap;
   transition: background 0.15s ease;
 }
@@ -94,6 +108,9 @@
 /* Hide dropdown on mobile (tabs become drawer) */
 @media screen and (max-width: 960px) {
   .tabs-dropdown {
+    display: none !important;
+  }
+  .md-tabs__item.tabs-dropdown-parent:hover > .tabs-dropdown {
     display: none !important;
   }
 }

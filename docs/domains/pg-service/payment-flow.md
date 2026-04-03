@@ -1,8 +1,8 @@
-# PG 서비스 - 결제 플로우
+# PG (Payment Gateway) - 결제 플로우
 
 > 온라인 결제의 전체 흐름을 다이어그램과 함께 단계별로 설명한다. 카드 결제, 간편결제, 정산 플로우를 다룬다.
 
-[< PG 서비스 개요로 돌아가기](index.md) | [핵심 개념](concepts.md)
+[< PG (Payment Gateway) 개요로 돌아가기](index.md) | [핵심 개념](concepts.md)
 
 ---
 

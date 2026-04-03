@@ -1,8 +1,8 @@
-# PG 서비스 - 핵심 개념
+# PG (Payment Gateway) - 핵심 개념
 
 > PG 도메인을 이해하기 위한 필수 용어와 개념을 정리한다. 각 개념의 정의, 중요성, 실제 예시를 포함한다.
 
-[< PG 서비스 개요로 돌아가기](index.md)
+[< PG (Payment Gateway) 개요로 돌아가기](index.md)
 
 ---
 

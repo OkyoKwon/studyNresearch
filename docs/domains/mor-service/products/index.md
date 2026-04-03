@@ -1,9 +1,9 @@
-# MOR 서비스 - 대표 제품 비교 개요
+# MOR (Merchant of Record) - 대표 제품 비교 개요
 
-> 주요 MOR 서비스를 비교하고, 비즈니스 유형에 맞는 선택 가이드를 제공한다.
-> 상위 문서: [MOR 서비스 개요](../index.md)
+> 주요 MOR (Merchant of Record)를 비교하고, 비즈니스 유형에 맞는 선택 가이드를 제공한다.
+> 상위 문서: [MOR (Merchant of Record) 개요](../index.md)
 
-## 주요 MOR 서비스 비교표
+## 주요 MOR (Merchant of Record) 비교표
 
 | 제품명 | 본사 | 주요 시장 | 핵심 특징 | 가격 모델 |
 |---|---|---|---|---|
@@ -45,7 +45,7 @@
 
 ```mermaid
 flowchart TD
-    A[MOR 서비스 선택] --> B{비즈니스 유형}
+    A[MOR (Merchant of Record) 선택] --> B{비즈니스 유형}
 
     B -->|인디 개발자 / 사이드 프로젝트| C{주 판매 제품}
     B -->|SaaS 스타트업| D{B2B vs B2C}
@@ -80,7 +80,7 @@ flowchart TD
 
 ## 마이그레이션 고려사항
 
-MOR 서비스 간 전환 또는 PG에서 MOR로 전환 시 주의할 점:
+MOR (Merchant of Record) 간 전환 또는 PG에서 MOR로 전환 시 주의할 점:
 
 - **기존 구독 이전:** 고객 결제 수단 재등록 필요 여부 확인
 - **세금 기록:** 기존 세금 신고 기록과의 연속성

@@ -95,8 +95,8 @@ timeline
 ## 관련 도메인
 
 - **[가상자산 규제](../crypto-regulation/index.md)**: 스테이블코인은 가상자산 규제의 핵심 하위 영역. VASP 규제, AML/KYC 의무가 스테이블코인 발행·유통에도 적용
-- **[PG 서비스](../pg-service/index.md)**: 스테이블코인을 결제 수단으로 활용하는 경우 PG 연동 및 전자금융업 규제와 교차
-- **[MOR 서비스](../mor-service/index.md)**: 가상자산 결제를 수용하는 MOR 모델에서 스테이블코인의 법적 지위가 중요
+- **[PG (Payment Gateway)](../pg-service/index.md)**: 스테이블코인을 결제 수단으로 활용하는 경우 PG 연동 및 전자금융업 규제와 교차
+- **[MOR (Merchant of Record)](../mor-service/index.md)**: 가상자산 결제를 수용하는 MOR 모델에서 스테이블코인의 법적 지위가 중요
 
 !!! warning "규제 변동 주의"
     스테이블코인 규제는 전 세계적으로 빠르게 변화하고 있다. 본 문서는 학습 참고용이며, 실제 사업 의사결정 시에는 반드시 최신 법령과 전문 법률 자문을 확인해야 한다.

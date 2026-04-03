@@ -6,7 +6,7 @@
 
 <div class="grid cards" markdown>
 
--   :material-credit-card-outline:{ .lg .middle } **PG 서비스**
+-   :material-credit-card-outline:{ .lg .middle } **PG (Payment Gateway)**
 
     ---
 
@@ -15,7 +15,7 @@
 
     [PG 서비스 바로가기 :material-arrow-right:](domains/pg-service/index.md)
 
--   :material-store-outline:{ .lg .middle } **MOR 서비스**
+-   :material-store-outline:{ .lg .middle } **MOR (Merchant of Record)**
 
     ---
 

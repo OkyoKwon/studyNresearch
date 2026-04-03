@@ -1,13 +1,13 @@
-# MOR 서비스 - 트렌드 및 전망
+# MOR (Merchant of Record) - 트렌드 및 전망
 
 > MOR 시장의 현재 동향과 미래 전망을 정리한다.
-> 상위 문서: [MOR 서비스 개요](./index.md)
+> 상위 문서: [MOR (Merchant of Record) 개요](./index.md)
 
 ## MOR 시장 성장세
 
 ### 시장 배경
 
-디지털 서비스의 글로벌 판매가 급증하면서, MOR 서비스 시장도 빠르게 성장하고 있다. 특히 다음 요인들이 성장을 견인한다:
+디지털 서비스의 글로벌 판매가 급증하면서, MOR (Merchant of Record) 시장도 빠르게 성장하고 있다. 특히 다음 요인들이 성장을 견인한다:
 
 - **SaaS 시장 확대:** 전 세계 SaaS 시장은 2025년 기준 약 $3,000억 규모로, 연 15% 이상 성장 중
 - **크로스보더 이커머스 증가:** 디지털 제품의 국경 간 거래 비중 지속 확대
@@ -57,7 +57,7 @@ timeline
 - **인도:** 18% GST + 이퀄라이제이션 레비(Equalization Levy) 2% 추가
 - **브라질:** ICMS, ISS, PIS/COFINS 등 복수의 세금 체계
 
-이 복잡성은 MOR 서비스의 가치를 더욱 부각시킨다.
+이 복잡성은 MOR (Merchant of Record)의 가치를 더욱 부각시킨다.
 
 ---
 
@@ -93,7 +93,7 @@ timeline
 **DAC7(Directive on Administrative Cooperation 7)** 은 EU의 플랫폼 사업자 보고 의무 지침이다.
 
 - 디지털 플랫폼 운영자가 판매자 정보와 거래 내역을 세무당국에 보고해야 함
-- MOR 서비스는 **보고 의무를 자동으로 이행**해주므로, 개발사의 부담이 줄어듦
+- MOR (Merchant of Record)는 **보고 의무를 자동으로 이행**해주므로, 개발사의 부담이 줄어듦
 - 비MOR 방식(PG만 사용)일 경우 개발사가 직접 보고 의무를 져야 함
 
 ### OECD Pillar 1 & 2
@@ -127,7 +127,7 @@ OECD 합의가 지연되면서, 여러 국가가 **독자적인 디지털 서비
 
 ### 현재 상태
 
-MOR 서비스와 세금 자동화 도구에 AI/ML 기술이 도입되고 있다:
+MOR (Merchant of Record)와 세금 자동화 도구에 AI/ML 기술이 도입되고 있다:
 
 - **고객 위치 정확도 향상:** IP, 결제 정보, 행동 데이터를 종합하여 고객 위치 판단 정확도 개선
 - **세율 변경 예측:** 각국의 세법 변경을 자동 추적하고 시스템에 반영
@@ -148,7 +148,7 @@ MOR 서비스와 세금 자동화 도구에 AI/ML 기술이 도입되고 있다:
 
 ### 수직 통합 가속화
 
-MOR 서비스와 결제 인프라의 경계가 점점 흐려지고 있다:
+MOR (Merchant of Record)와 결제 인프라의 경계가 점점 흐려지고 있다:
 
 ```mermaid
 graph LR
@@ -182,7 +182,7 @@ graph LR
 
 ### 번들링(Bundling) 트렌드
 
-MOR 서비스가 제공하는 기능의 범위가 계속 확장되고 있다:
+MOR (Merchant of Record)가 제공하는 기능의 범위가 계속 확장되고 있다:
 
 **현재 MOR 번들에 포함되는 기능:**
 - 결제 처리
@@ -216,4 +216,4 @@ MOR 서비스가 제공하는 기능의 범위가 계속 확장되고 있다:
 
 ---
 
-> 관련: [MOR 서비스 개요](./index.md) | [PG vs MOR 비교](./pg-vs-mor.md) | [PG 서비스 트렌드](../pg-service/trends.md)
+> 관련: [MOR (Merchant of Record) 개요](./index.md) | [PG vs MOR 비교](./pg-vs-mor.md) | [PG (Payment Gateway) 트렌드](../pg-service/trends.md)

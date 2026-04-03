@@ -136,7 +136,7 @@ graph LR
 - Stripe의 Bridge 인수가 신호탄: 결제 인프라 기업의 스테이블코인 통합 가속화
 - 2025~2027년 주요 결제 네트워크(Visa, Mastercard)에서 스테이블코인 정산 일상화 전망
 
-→ 관련: [PG 서비스](../pg-service/index.md)
+→ 관련: [PG (Payment Gateway)](../pg-service/index.md)
 
 ---
 

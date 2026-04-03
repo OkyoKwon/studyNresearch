@@ -32,7 +32,7 @@ theme:
 
 nav:
   - 홈: index.md
-  - PG 서비스:
+  - PG (Payment Gateway):
       - 개요: domains/pg-service/index.md
       - 핵심 개념: domains/pg-service/concepts.md
       - 결제 플로우: domains/pg-service/payment-flow.md
@@ -42,7 +42,7 @@ nav:
           - Toss Payments: domains/pg-service/products/toss-payments.md
           - NHN KCP: domains/pg-service/products/nhn-kcp.md
       - 트렌드: domains/pg-service/trends.md
-  - MOR 서비스:
+  - MOR (Merchant of Record):
       - 개요: domains/mor-service/index.md
       - 핵심 개념: domains/mor-service/concepts.md
       - PG vs MOR 비교: domains/mor-service/pg-vs-mor.md

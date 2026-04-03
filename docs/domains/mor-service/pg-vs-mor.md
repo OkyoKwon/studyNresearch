@@ -1,20 +1,20 @@
 # PG vs MOR 비교
 
 > PG(Payment Gateway)와 MOR(Merchant of Record)의 차이를 명확히 이해하고, 비즈니스 상황에 맞는 선택을 할 수 있도록 정리한다.
-> 상위 문서: [MOR 서비스 개요](./index.md) | 관련: [PG 서비스](../pg-service/index.md)
+> 상위 문서: [MOR (Merchant of Record) 개요](./index.md) | 관련: [PG (Payment Gateway)](../pg-service/index.md)
 
 ## 핵심 차이점 비교표
 
 | 구분 | PG (Payment Gateway) | MOR (Merchant of Record) |
 |---|---|---|
-| **법적 판매 주체** | **개발사 본인**이 법적 판매자 | **MOR 서비스**가 법적 판매자 |
+| **법적 판매 주체** | **개발사 본인**이 법적 판매자 | **MOR (Merchant of Record)**가 법적 판매자 |
 | **세금 처리** | 개발사가 직접 각국 세금 등록, 징수, 신고, 납부 | MOR이 전 세계 세금을 자동 처리 |
 | **환불 처리** | 개발사가 환불 정책 수립 및 실행 | MOR이 환불 정책 관리 및 실행 대행 |
 | **차지백 대응** | 개발사가 직접 카드사와 분쟁 대응 | MOR이 분쟁 대응 및 손실 흡수 |
 | **규제 준수** | 개발사가 각국 규제 직접 준수 (PCI DSS, SCA 등) | MOR이 규제 준수 책임 |
 | **가격 책정** | 자유로운 가격 책정 | MOR 정책 내에서 가격 책정 |
 | **수수료** | 거래당 2.9% + 30¢ 수준 | 거래당 5% + 50¢ 수준 |
-| **카드 명세서 표시** | 개발사 이름 또는 설정한 이름 | MOR 서비스 이름 (예: PADDLE.COM) |
+| **카드 명세서 표시** | 개발사 이름 또는 설정한 이름 | MOR (Merchant of Record) 이름 (예: PADDLE.COM) |
 | **정산 주기** | 2~7 영업일 (거래별) | 1~15 영업일 (집계 후 정산) |
 | **고객 데이터 소유** | 개발사가 전체 소유 | MOR 정책에 따라 제한될 수 있음 |
 | **대표 서비스** | Stripe, Toss Payments, Braintree | Paddle, Lemon Squeezy, FastSpring |
@@ -27,7 +27,7 @@
 개발사가 법적 판매자다. Stripe을 통해 결제를 받더라도, 고객과의 계약 당사자는 개발사이며, 모든 법적 의무(세금, 소비자 보호법 등)는 개발사가 진다.
 
 **MOR 사용 시:**
-MOR 서비스가 법적 판매자다. Paddle이 고객에게 소프트웨어를 판매하고, 개발사에게 로열티(수수료 차감 후 정산금)를 지급하는 구조다. 법적 의무는 MOR이 진다.
+MOR (Merchant of Record)가 법적 판매자다. Paddle이 고객에게 소프트웨어를 판매하고, 개발사에게 로열티(수수료 차감 후 정산금)를 지급하는 구조다. 법적 의무는 MOR이 진다.
 
 ### 세금 처리
 
@@ -128,4 +128,4 @@ flowchart TD
 
 ---
 
-> 다음: [MOR 제품 비교](./products/index.md) | 관련: [PG 서비스 개요](../pg-service/index.md)
+> 다음: [MOR 제품 비교](./products/index.md) | 관련: [PG (Payment Gateway) 개요](../pg-service/index.md)

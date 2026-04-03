@@ -1,8 +1,8 @@
-# PG 서비스 - 트렌드 및 전망
+# PG (Payment Gateway) - 트렌드 및 전망
 
-> 결제 산업의 최신 트렌드와 PG 서비스의 미래 방향을 다룬다. 2025년 기준 주요 변화와 전망을 정리한다.
+> 결제 산업의 최신 트렌드와 PG (Payment Gateway)의 미래 방향을 다룬다. 2025년 기준 주요 변화와 전망을 정리한다.
 
-[< PG 서비스 개요로 돌아가기](index.md)
+[< PG (Payment Gateway) 개요로 돌아가기](index.md)
 
 ---
 
@@ -248,4 +248,4 @@ mindmap
 - [핵심 개념](concepts.md)에서 이 트렌드들이 기존 결제 구조와 어떻게 연결되는지 확인
 - [결제 플로우](payment-flow.md)에서 현재의 결제 흐름과 미래의 변화를 비교
 - [제품 비교](products/index.md)에서 각 PG가 이 트렌드에 어떻게 대응하고 있는지 확인
-- [MOR 서비스](../mor-service/index.md)에서 해외 결제 트렌드의 대안적 접근 확인
+- [MOR (Merchant of Record)](../mor-service/index.md)에서 해외 결제 트렌드의 대안적 접근 확인

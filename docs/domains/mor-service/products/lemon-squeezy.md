@@ -1,6 +1,6 @@
 # Lemon Squeezy
 
-> 상위 문서: [제품 비교 개요](./index.md) | [MOR 서비스 개요](../index.md)
+> 상위 문서: [제품 비교 개요](./index.md) | [MOR (Merchant of Record) 개요](../index.md)
 
 ## 기본 정보
 
@@ -107,7 +107,7 @@ sequenceDiagram
 
 - Stripe 생태계(Stripe Connect, Stripe Tax 등)와의 통합 심화 예상
 - 더 많은 결제 수단과 국가 지원 확대 가능
-- Stripe의 엔터프라이즈 고객 기반을 활용한 B2B MOR 서비스 확장 가능성
+- Stripe의 엔터프라이즈 고객 기반을 활용한 B2B MOR (Merchant of Record) 확장 가능성
 - 장기적으로 Stripe 내 MOR 기능으로 흡수될 가능성도 존재
 
 > [!NOTE]

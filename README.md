@@ -8,8 +8,8 @@
 
 | 도메인 | 설명 | 대표 제품/기관 |
 |--------|------|---------------|
-| **PG 서비스** | Payment Gateway 구조, 결제 플로우, PG사 비교 | Stripe, Toss Payments, NHN KCP |
-| **MOR 서비스** | Merchant of Record 모델, PG와의 차이 | Paddle, Lemon Squeezy, FastSpring |
+| **PG (Payment Gateway)** | Payment Gateway 구조, 결제 플로우, PG사 비교 | Stripe, Toss Payments, NHN KCP |
+| **MOR (Merchant of Record)** | Merchant of Record 모델, PG와의 차이 | Paddle, Lemon Squeezy, FastSpring |
 | **가상자산 규제** | 글로벌 규제 프레임워크, 국가별 현황 | FATF, SEC, 금융위원회, MiCA |
 | **스테이블코인 규제** | 스테이블코인 유형, 규제 프레임워크, 주요 코인 분석 | USDT, USDC, DAI, MiCA, GENIUS Act |
 

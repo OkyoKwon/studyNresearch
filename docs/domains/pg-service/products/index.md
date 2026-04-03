@@ -1,8 +1,8 @@
-# PG 서비스 - 대표 제품 비교 개요
+# PG (Payment Gateway) - 대표 제품 비교 개요
 
-> 국내외 주요 PG 서비스를 비교하고, 상황별 선택 가이드를 제공한다.
+> 국내외 주요 PG (Payment Gateway)를 비교하고, 상황별 선택 가이드를 제공한다.
 
-[< PG 서비스 개요로 돌아가기](../index.md)
+[< PG (Payment Gateway) 개요로 돌아가기](../index.md)
 
 ---
 

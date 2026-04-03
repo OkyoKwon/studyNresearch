@@ -24,6 +24,8 @@
       제목, 축 라벨, 섹션 타이틀 등
    ======================================== */
 [data-md-color-scheme="slate"] .mermaid .titleText,
+[data-md-color-scheme="slate"] .mermaid .timelineTitle,
+[data-md-color-scheme="slate"] .mermaid text.timelineTitle,
 [data-md-color-scheme="slate"] .mermaid .sectionTitle,
 [data-md-color-scheme="slate"] .mermaid .loopText,
 [data-md-color-scheme="slate"] .mermaid .messageText,

@@ -236,6 +236,9 @@ extra_css:
   - stylesheets/extra.css
   - stylesheets/mermaid-fix.css
 
+extra_javascript:
+  - javascripts/tabs-dropdown.js
+
 copyright: Copyright &copy; 2025 Okyo
 
 extra:

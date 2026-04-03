@@ -40,6 +40,7 @@ theme:
 nav:
   - 홈: index.md
   - 결제/금융 인프라:
+      - categories/payment.md
       - PG (Payment Gateway):
           - 개요: domains/pg-service/index.md
           - 핵심 개념: domains/pg-service/concepts.md
@@ -97,6 +98,7 @@ nav:
               - PIX (브라질): domains/realtime-payment/products/pix.md
           - 트렌드: domains/realtime-payment/trends.md
   - 디지털 자산/Web3:
+      - categories/web3.md
       - 가상자산 규제:
           - 개요: domains/crypto-regulation/index.md
           - 규제 프레임워크: domains/crypto-regulation/frameworks.md
@@ -150,6 +152,7 @@ nav:
               - MakerDAO: domains/defi/products/makerdao.md
           - 트렌드: domains/defi/trends.md
   - 규제/컴플라이언스:
+      - categories/compliance.md
       - AML/KYC:
           - 개요: domains/aml-kyc/index.md
           - 핵심 개념: domains/aml-kyc/concepts.md
@@ -178,6 +181,7 @@ nav:
               - Chainalysis KYT: domains/regtech/products/chainalysis-kyt.md
           - 트렌드: domains/regtech/trends.md
   - 비즈니스 모델:
+      - categories/business.md
       - SaaS 비즈니스 모델:
           - 개요: domains/saas-business/index.md
           - 핵심 개념: domains/saas-business/concepts.md

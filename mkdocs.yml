@@ -208,7 +208,8 @@ nav:
 plugins:
   - search:
       lang: ko
-  - tags
+  - tags:
+      tags_file: tags.md
   - mermaid2
 
 markdown_extensions:

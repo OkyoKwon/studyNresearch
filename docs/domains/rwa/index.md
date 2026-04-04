@@ -42,7 +42,7 @@ graph TD
         ORACLE[오라클]
         MINT[토큰 발행]
     end
-    subgraph 유통·활용
+    subgraph 유통 및 활용
         TRADE[거래 플랫폼]
         DEFI[DeFi 담보]
         INVESTOR[투자자]

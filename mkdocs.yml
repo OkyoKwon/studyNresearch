@@ -141,6 +141,12 @@ nav:
               - Polymath: domains/sto/products/polymath.md
               - 한국 STO: domains/sto/products/korea-sto.md
           - 트렌드: domains/sto/trends.md
+      - 실물자산 토큰화 (RWA):
+          - 개요: domains/rwa/index.md
+          - 핵심 개념: domains/rwa/concepts.md
+          - 주요 플랫폼:
+              - 비교 개요: domains/rwa/products/index.md
+          - 트렌드: domains/rwa/trends.md
       - DeFi 프로토콜:
           - 개요: domains/defi/index.md
           - 핵심 개념: domains/defi/concepts.md

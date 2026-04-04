@@ -13,8 +13,14 @@ UNQUOTED_PARENS_IN_LABEL = re.compile(r"\|([^|\"]*\([^)]*\)[^|\"]*)\|")
 UNCLOSED_NODE_BRACKET = re.compile(r"(\w+)\[([^\]]*$)", re.MULTILINE)
 UNCLOSED_NODE_PAREN = re.compile(r"(\w+)\(([^)]*$)", re.MULTILINE)
 
-# subgraph 이름에 따옴표 없는 특수문자
-SUBGRAPH_SPECIAL = re.compile(r"subgraph\s+[^\[\"]*[(){}]")
+# subgraph 이름에 따옴표 없는 특수문자 (괄호, 유니코드 구두점 포함)
+SUBGRAPH_SPECIAL = re.compile(r"subgraph\s+[^\[\"]*[(){}\u00B7\u2014\u2026\u2022\u2013]")
+
+# quadrantChart 축 레이블에 영문+한글 혼합 시 따옴표 필수
+QUADRANT_AXIS_UNQUOTED_MIXED = re.compile(
+    r"(x-axis|y-axis)\s+(?!\")"
+    r"(?=.*[a-zA-Z])(?=.*[\uac00-\ud7a3])"
+)
 
 
 def _extract_mermaid_blocks() -> list[tuple[str, int, str]]:
@@ -99,6 +105,27 @@ def test_no_special_chars_in_subgraph_names():
 
     assert not errors, (
         f"subgraph 이름에 특수문자 발견 ({len(errors)}건):\n"
+        + "\n".join(errors[:20])
+    )
+
+
+def test_quadrant_axis_mixed_labels_are_quoted():
+    """quadrantChart 축 레이블에 영문+한글 혼합 시 따옴표가 필요하다.
+
+    예: x-axis DeFi 네이티브 --> TradFi 연계
+      → x-axis "DeFi 네이티브" --> "TradFi 연계"
+    """
+    errors = []
+    for filepath, line_num, code in _extract_mermaid_blocks():
+        first_line = code.strip().split("\n")[0].strip()
+        if first_line != "quadrantChart":
+            continue
+        for i, line in enumerate(code.split("\n"), start=1):
+            if QUADRANT_AXIS_UNQUOTED_MIXED.search(line.strip()):
+                errors.append(f"  {filepath}:{line_num + i} → {line.strip()}")
+
+    assert not errors, (
+        f"quadrantChart 축 레이블에 따옴표 없는 영문+한글 혼합 ({len(errors)}건):\n"
         + "\n".join(errors[:20])
     )
 

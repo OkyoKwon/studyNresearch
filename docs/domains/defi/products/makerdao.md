@@ -52,12 +52,12 @@ sequenceDiagram
 
 ```mermaid
 graph TD
-    subgraph Sky Protocol (신)
+    subgraph SKY_NEW ["Sky Protocol (신)"]
         SKY[SKY 토큰<br/>거버넌스]
         USDS[USDS<br/>스테이블코인]
         SUBDAO[SubDAO들]
     end
-    subgraph MakerDAO (구)
+    subgraph MAKER_OLD ["MakerDAO (구)"]
         MKR[MKR 토큰]
         DAI[DAI]
         CORE[Core Unit들]

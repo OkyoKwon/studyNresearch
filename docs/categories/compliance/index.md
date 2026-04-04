@@ -10,7 +10,7 @@
 
     자금세탁 방지, 본인인증 체계. Chainalysis / Jumio / FATF 권고안.
 
-    [바로가기 :material-arrow-right:](../domains/aml-kyc/index.md)
+    [바로가기 :material-arrow-right:](../../domains/aml-kyc/index.md)
 
 -   :material-database-lock-outline:{ .lg .middle } **데이터 규제 (개인정보)**
 
@@ -18,7 +18,7 @@
 
     GDPR, 한국 개인정보보호법, 마이데이터. CCPA / MyData.
 
-    [바로가기 :material-arrow-right:](../domains/data-regulation/index.md)
+    [바로가기 :material-arrow-right:](../../domains/data-regulation/index.md)
 
 -   :material-robot-outline:{ .lg .middle } **레그테크 (RegTech)**
 
@@ -26,6 +26,6 @@
 
     규제 준수 자동화 기술. ComplyAdvantage / Sumsub.
 
-    [바로가기 :material-arrow-right:](../domains/regtech/index.md)
+    [바로가기 :material-arrow-right:](../../domains/regtech/index.md)
 
 </div>

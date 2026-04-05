@@ -15,6 +15,7 @@
       { label: "스테이블코인 규제", path: "domains/stablecoin-regulation/" },
       { label: "CBDC (중앙은행 디지털화폐)", path: "domains/cbdc/" },
       { label: "토큰증권 (STO)", path: "domains/sto/" },
+      { label: "실물자산 토큰화 (RWA)", path: "domains/rwa/" },
       { label: "DeFi 프로토콜", path: "domains/defi/" }
     ],
     "규제/컴플라이언스": [
@@ -28,45 +29,83 @@
     ]
   };
 
+  var portalMap = new WeakMap();
+  var allDropdowns = [];
+  var activeDropdown = null;
+  var hideTimeout = null;
+
   function findBaseUrl() {
-    // Method 1: Find "홈" tab and resolve its href as the site root
-    var homeTab = document.querySelector('.md-tabs__link');
-    if (homeTab) {
-      var tabs = document.querySelectorAll('.md-tabs__link');
-      for (var i = 0; i < tabs.length; i++) {
-        if (tabs[i].textContent.replace(/\s+/g, " ").trim() === "홈") {
-          // Create a temporary anchor to resolve the relative href to absolute
-          var a = document.createElement("a");
-          a.href = tabs[i].getAttribute("href");
-          var resolved = a.href;
-          // Ensure trailing slash
-          if (!resolved.endsWith("/")) resolved += "/";
-          return resolved;
-        }
+    var tabs = document.querySelectorAll(".md-tabs__link");
+    for (var i = 0; i < tabs.length; i++) {
+      if (tabs[i].textContent.replace(/\s+/g, " ").trim() === "홈") {
+        var a = document.createElement("a");
+        a.href = tabs[i].getAttribute("href");
+        var resolved = a.href;
+        if (!resolved.endsWith("/")) resolved += "/";
+        return resolved;
       }
     }
-    // Method 2: Use __md_scope
     if (typeof __md_scope !== "undefined") {
       return __md_scope.href;
     }
     return window.location.origin + "/";
   }
 
+  function hideAllDropdowns() {
+    clearTimeout(hideTimeout);
+    allDropdowns.forEach(function (dd) {
+      dd.style.display = "none";
+    });
+    activeDropdown = null;
+  }
+
+  function showDropdown(tabItem, dropdown) {
+    clearTimeout(hideTimeout);
+    hideAllDropdowns();
+
+    var rect = tabItem.getBoundingClientRect();
+    var left = rect.left;
+
+    if (left + 240 > window.innerWidth) {
+      left = window.innerWidth - 250;
+    }
+    if (left < 0) left = 4;
+
+    dropdown.style.position = "fixed";
+    dropdown.style.top = rect.bottom + "px";
+    dropdown.style.left = left + "px";
+    dropdown.style.display = "block";
+    activeDropdown = dropdown;
+  }
+
+  function scheduleHide() {
+    hideTimeout = setTimeout(function () {
+      hideAllDropdowns();
+    }, 150);
+  }
+
+  function cleanupPortals() {
+    allDropdowns.forEach(function (dd) {
+      if (dd.parentNode) {
+        dd.parentNode.removeChild(dd);
+      }
+    });
+    allDropdowns = [];
+    activeDropdown = null;
+  }
+
   function buildDropdowns() {
     var baseUrl = findBaseUrl();
-
     var tabs = document.querySelectorAll(".md-tabs__link");
     if (!tabs.length) return;
 
     tabs.forEach(function (tab) {
       var tabItem = tab.parentElement;
-      if (tabItem.querySelector(".tabs-dropdown")) return;
+      if (portalMap.has(tabItem)) return;
 
       var text = tab.textContent.replace(/\s+/g, " ").trim();
       var items = DROPDOWNS[text];
       if (!items) return;
-
-      tabItem.classList.add("tabs-dropdown-parent");
 
       var dropdown = document.createElement("ul");
       dropdown.className = "tabs-dropdown";
@@ -80,11 +119,28 @@
         dropdown.appendChild(li);
       });
 
-      tabItem.appendChild(dropdown);
+      document.body.appendChild(dropdown);
+      portalMap.set(tabItem, dropdown);
+      allDropdowns.push(dropdown);
+
+      tabItem.addEventListener("mouseenter", function () {
+        showDropdown(tabItem, dropdown);
+      });
+
+      tabItem.addEventListener("mouseleave", function () {
+        scheduleHide();
+      });
+
+      dropdown.addEventListener("mouseenter", function () {
+        clearTimeout(hideTimeout);
+      });
+
+      dropdown.addEventListener("mouseleave", function () {
+        hideAllDropdowns();
+      });
     });
   }
 
-  // Run when DOM is ready
   function init() {
     buildDropdowns();
   }
@@ -95,16 +151,18 @@
     init();
   }
 
-  // Also run on window load as safety net
   window.addEventListener("load", init);
 
-  // Handle MkDocs Material instant navigation
-  // The tabs DOM is preserved across instant navigation, so MutationObserver
-  // watches for any tab re-renders
+  window.addEventListener("scroll", function () {
+    if (activeDropdown) {
+      hideAllDropdowns();
+    }
+  }, { passive: true });
+
   new MutationObserver(function () {
     var hasTabs = document.querySelector(".md-tabs__link");
-    var hasDropdown = document.querySelector(".tabs-dropdown");
-    if (hasTabs && !hasDropdown) {
+    var hasPortal = allDropdowns.length > 0;
+    if (hasTabs && !hasPortal) {
       buildDropdowns();
     }
   }).observe(document.documentElement, { childList: true, subtree: true });

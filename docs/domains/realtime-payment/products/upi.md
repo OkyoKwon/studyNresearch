@@ -39,7 +39,7 @@ graph TB
         NPCI -->|결제 라우팅| Bank2[수취인 은행]
 
         subgraph "UPI 식별자"
-            VPA[VPA<br/>user@bank]
+            VPA["VPA<br/>user@bank"]
             Mobile[모바일 번호]
             QR[QR 코드]
             Aadhaar[Aadhaar 번호]

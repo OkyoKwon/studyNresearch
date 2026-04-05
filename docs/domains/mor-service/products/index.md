@@ -52,7 +52,7 @@ search:
 
 ```mermaid
 flowchart TD
-    A[MOR (Merchant of Record) 선택] --> B{비즈니스 유형}
+    A["MOR (Merchant of Record) 선택"] --> B{비즈니스 유형}
 
     B -->|인디 개발자 / 사이드 프로젝트| C{주 판매 제품}
     B -->|SaaS 스타트업| D{B2B vs B2C}

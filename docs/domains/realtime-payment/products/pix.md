@@ -39,7 +39,7 @@ graph TB
         ReceiverApp -->|입금 통지| Receiver[수취인]
 
         subgraph "PIX 키 (식별자)"
-            CPF[CPF 번호<br/>(주민번호)]
+            CPF["CPF 번호<br/>(주민번호)"]
             Phone[모바일 번호]
             Email[이메일]
             Random[랜덤 키]

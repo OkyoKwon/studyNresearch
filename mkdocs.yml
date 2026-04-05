@@ -1,5 +1,5 @@
 site_name: "Okyo's Domain Wiki"
-site_description: "결제, 디지털 자산, 규제, 비즈니스 모델 등 도메인 지식을 정리하는 개인 위키"
+site_description: "결제, 디지털 자산, 규제, 비즈니스 모델, 부동산 등 도메인 지식을 정리하는 개인 위키"
 site_url: "https://okyokwon.github.io/studyNresearch/"
 docs_dir: docs
 
@@ -205,6 +205,15 @@ nav:
               - Uber: domains/platform-economy/products/uber.md
               - Airbnb: domains/platform-economy/products/airbnb.md
           - 트렌드: domains/platform-economy/trends.md
+  - 부동산/투자:
+      - categories/realestate/index.md
+      - 부동산 투자:
+          - 개요: domains/real-estate-investment/index.md
+          - 핵심 개념: domains/real-estate-investment/concepts.md
+          - 대표 프로젝트:
+              - 비교 개요: domains/real-estate-investment/products/index.md
+              - 용인플랫폼시티: domains/real-estate-investment/products/yongin-platform-city.md
+          - 트렌드: domains/real-estate-investment/trends.md
   - 가이드:
       - 도메인 추가 가이드: guide/add-domain.md
       - AI 프롬프트 템플릿: guide/ai-templates.md

@@ -34,6 +34,17 @@
   var activeDropdown = null;
   var hideTimeout = null;
 
+  function isDropdownsMapped() {
+    var tabs = document.querySelectorAll(".md-tabs__link");
+    for (var i = 0; i < tabs.length; i++) {
+      var text = tabs[i].textContent.replace(/\s+/g, " ").trim();
+      if (DROPDOWNS[text] && !portalMap.has(tabs[i].parentElement)) {
+        return false;
+      }
+    }
+    return allDropdowns.length > 0;
+  }
+
   function findBaseUrl() {
     var tabs = document.querySelectorAll(".md-tabs__link");
     for (var i = 0; i < tabs.length; i++) {
@@ -92,6 +103,7 @@
     });
     allDropdowns = [];
     activeDropdown = null;
+    portalMap = new WeakMap();
   }
 
   function buildDropdowns() {
@@ -161,8 +173,8 @@
 
   new MutationObserver(function () {
     var hasTabs = document.querySelector(".md-tabs__link");
-    var hasPortal = allDropdowns.length > 0;
-    if (hasTabs && !hasPortal) {
+    if (hasTabs && !isDropdownsMapped()) {
+      cleanupPortals();
       buildDropdowns();
     }
   }).observe(document.documentElement, { childList: true, subtree: true });

@@ -124,5 +124,6 @@ graph TD
 ## 관련 문서
 
 - [용인플랫폼시티 개요](index.md) | [핵심 개념](concepts.md)
+- [분양 정보](presale.md)
 - [주변 프로젝트 비교](products/index.md)
 - [부동산 투자 트렌드](../real-estate-investment/trends.md)

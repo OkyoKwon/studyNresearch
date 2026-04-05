@@ -216,6 +216,7 @@ nav:
       - 용인플랫폼시티:
           - 개요: domains/yongin-platform-city/index.md
           - 핵심 개념: domains/yongin-platform-city/concepts.md
+          - 분양 정보: domains/yongin-platform-city/presale.md
           - 주변 프로젝트 비교: domains/yongin-platform-city/products/index.md
           - 개발 현황·투자 분석: domains/yongin-platform-city/trends.md
   - 가이드:

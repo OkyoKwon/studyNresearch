@@ -20,8 +20,8 @@ search:
 ```mermaid
 quadrantChart
     title 거래 규모 vs 성숙도
-    x-axis 초기 단계 --> 성숙/포화
-    y-axis 소규모 --> 대규모
+    x-axis Early Stage --> Mature
+    y-axis Small Scale --> Large Scale
     FedNow: [0.15, 0.2]
     UPI: [0.8, 0.95]
     PIX: [0.55, 0.75]

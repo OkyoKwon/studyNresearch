@@ -37,8 +37,8 @@ search:
 ```mermaid
 quadrantChart
     title CBDC 프로젝트 성숙도 vs 인구 규모
-    x-axis 초기 연구 --> 전면 출시
-    y-axis 소규모 경제 --> 대규모 경제
+    x-axis Early Research --> Full Launch
+    y-axis Small Economy --> Large Economy
     quadrant-1 대규모·성숙
     quadrant-2 대규모·초기
     quadrant-3 소규모·초기

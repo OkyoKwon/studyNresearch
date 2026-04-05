@@ -36,7 +36,7 @@ search:
 quadrantChart
     title RWA 플랫폼 — DeFi 네이티브 vs TradFi 연계
     x-axis DeFi 네이티브 --> TradFi 연계
-    y-axis 소규모 --> 대규모
+    y-axis Small Scale --> Large Scale
     quadrant-1 대규모·TradFi
     quadrant-2 대규모·DeFi
     quadrant-3 소규모·DeFi

@@ -20,7 +20,7 @@ search:
 ```mermaid
 quadrantChart
     title 타겟 고객 vs 기능 깊이
-    x-axis 기능특화 --> 풀스택금융
+    x-axis Specialized --> Full-Stack
     y-axis SMB/소비자 --> Enterprise
     Stripe Treasury: [0.6, 0.6]
     Shopify Balance: [0.4, 0.3]

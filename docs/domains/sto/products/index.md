@@ -36,8 +36,8 @@ search:
 ```mermaid
 quadrantChart
     title STO 플랫폼 — 규제 성숙도 vs 시장 규모
-    x-axis 초기 단계 --> 성숙 규제
-    y-axis 소규모 --> 대규모
+    x-axis Early Stage --> Mature Regulation
+    y-axis Small Scale --> Large Scale
     quadrant-1 대규모·성숙
     quadrant-2 대규모·초기
     quadrant-3 소규모·초기

@@ -23,6 +23,28 @@
    2. 도형 밖 텍스트 → 밝은 색 (어두운 배경 위)
       제목, 축 라벨, 섹션 타이틀 등
    ======================================== */
+/* ========================================
+   2-a. quadrantChart 다크모드 가시성
+        Mermaid가 inline fill로 어두운 색을 하드코딩하므로
+        !important로 오버라이드해야 한다
+   ======================================== */
+[data-md-color-scheme="slate"] .mermaid .quadrant text,
+[data-md-color-scheme="slate"] .mermaid .data-point text,
+[data-md-color-scheme="slate"] .mermaid .label text,
+[data-md-color-scheme="slate"] .mermaid .title text {
+  fill: #e0e0e0 !important;
+  color: #e0e0e0 !important;
+}
+
+/* quadrantChart 사분면 배경을 다크모드에 맞게 조정 */
+[data-md-color-scheme="slate"] .mermaid .quadrant rect {
+  opacity: 0.6 !important;
+}
+
+/* ========================================
+   2-b. 도형 밖 텍스트 → 밝은 색 (어두운 배경 위)
+        제목, 축 라벨, 섹션 타이틀 등
+   ======================================== */
 [data-md-color-scheme="slate"] .mermaid .titleText,
 [data-md-color-scheme="slate"] .mermaid .timelineTitle,
 [data-md-color-scheme="slate"] .mermaid text.timelineTitle,

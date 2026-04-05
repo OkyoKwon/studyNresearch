@@ -22,8 +22,8 @@ search:
 ```mermaid
 quadrantChart
     title 기능 범위 vs 시장 커버리지
-    x-axis "데이터 연결 중심" --> "풀스택 BaaS"
-    y-axis "단일 시장" --> "글로벌"
+    x-axis 데이터 연결 중심 --> 풀스택 BaaS
+    y-axis 단일 시장 --> 글로벌
     Plaid: [0.3, 0.7]
     Unit: [0.8, 0.4]
     Column: [0.85, 0.3]

@@ -20,8 +20,8 @@ search:
 ```mermaid
 quadrantChart
     title 타겟 고객 vs 기능 깊이
-    x-axis "특정 기능 특화" --> "풀스택 금융"
-    y-axis "SMB / 소비자" --> "Enterprise"
+    x-axis 특정 기능 특화 --> 풀스택 금융
+    y-axis SMB / 소비자 --> Enterprise
     Stripe Treasury: [0.6, 0.6]
     Shopify Balance: [0.4, 0.3]
     Unit: [0.8, 0.5]

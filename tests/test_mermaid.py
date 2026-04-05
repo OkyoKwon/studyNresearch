@@ -16,10 +16,9 @@ UNCLOSED_NODE_PAREN = re.compile(r"(\w+)\(([^)]*$)", re.MULTILINE)
 # subgraph 이름에 따옴표 없는 특수문자 (괄호, 유니코드 구두점 포함)
 SUBGRAPH_SPECIAL = re.compile(r"subgraph\s+[^\[\"]*[(){}\u00B7\u2014\u2026\u2022\u2013]")
 
-# quadrantChart 축 레이블에 영문+한글 혼합 시 따옴표 필수
-QUADRANT_AXIS_UNQUOTED_MIXED = re.compile(
-    r"(x-axis|y-axis)\s+(?!\")"
-    r"(?=.*[a-zA-Z])(?=.*[\uac00-\ud7a3])"
+# quadrantChart 축 레이블에 따옴표 사용 금지 (Mermaid 11.x에서 파싱 오류 발생)
+QUADRANT_AXIS_QUOTED = re.compile(
+    r"(x-axis|y-axis)\s+\"",
 )
 
 
@@ -109,11 +108,13 @@ def test_no_special_chars_in_subgraph_names():
     )
 
 
-def test_quadrant_axis_mixed_labels_are_quoted():
-    """quadrantChart 축 레이블에 영문+한글 혼합 시 따옴표가 필요하다.
+def test_quadrant_axis_labels_not_quoted():
+    """quadrantChart 축 레이블에 따옴표를 사용하면 안 된다.
 
-    예: x-axis DeFi 네이티브 --> TradFi 연계
-      → x-axis "DeFi 네이티브" --> "TradFi 연계"
+    Mermaid 11.x의 quadrantChart는 축 레이블에 따옴표를 지원하지 않아 파싱 오류가 발생한다.
+
+    예: x-axis "DeFi 네이티브" --> "TradFi 연계"
+      → x-axis DeFi 네이티브 --> TradFi 연계
     """
     errors = []
     for filepath, line_num, code in _extract_mermaid_blocks():
@@ -121,11 +122,11 @@ def test_quadrant_axis_mixed_labels_are_quoted():
         if first_line != "quadrantChart":
             continue
         for i, line in enumerate(code.split("\n"), start=1):
-            if QUADRANT_AXIS_UNQUOTED_MIXED.search(line.strip()):
+            if QUADRANT_AXIS_QUOTED.search(line.strip()):
                 errors.append(f"  {filepath}:{line_num + i} → {line.strip()}")
 
     assert not errors, (
-        f"quadrantChart 축 레이블에 따옴표 없는 영문+한글 혼합 ({len(errors)}건):\n"
+        f"quadrantChart 축 레이블에 따옴표 사용 금지 ({len(errors)}건):\n"
         + "\n".join(errors[:20])
     )
 

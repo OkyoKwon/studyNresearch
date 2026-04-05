@@ -20,7 +20,7 @@ search:
 ```mermaid
 quadrantChart
     title 글로벌 도달 vs 제품 다양성
-    x-axis 단일 모델 --> 다양한 금융 상품
+    x-axis 단일모델 --> 다양한금융상품
     y-axis 로컬 시장 --> 글로벌
     Klarna: [0.85, 0.9]
     Afterpay: [0.3, 0.65]

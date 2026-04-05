@@ -26,6 +26,10 @@
     "비즈니스 모델": [
       { label: "SaaS 비즈니스 모델", path: "domains/saas-business/" },
       { label: "플랫폼 이코노미", path: "domains/platform-economy/" }
+    ],
+    "부동산/투자": [
+      { label: "부동산 투자", path: "domains/real-estate-investment/" },
+      { label: "용인플랫폼시티", path: "domains/yongin-platform-city/" }
     ]
   };
 

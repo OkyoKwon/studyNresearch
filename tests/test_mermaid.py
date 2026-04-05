@@ -21,6 +21,14 @@ QUADRANT_AXIS_QUOTED = re.compile(
     r"(x-axis|y-axis)\s+\"",
 )
 
+# quadrantChart 축 레이블에 공백 단어 3개 이상이면 Mermaid 파싱 오류 발생
+# OK:  x-axis 저접근성 --> 고접근성          (1 word each)
+# OK:  x-axis DeFi 네이티브 --> TradFi 연계  (2 words each)
+# BAD: x-axis 서울 접근성 낮음 --> 서울 접근성 높음  (3 words each)
+QUADRANT_AXIS_LONG_LABEL = re.compile(
+    r"(x-axis|y-axis)\s+(.+?)\s*-->\s*(.+)"
+)
+
 
 def _extract_mermaid_blocks() -> list[tuple[str, int, str]]:
     """모든 Mermaid 블록을 (파일경로, 라인번호, 코드) 튜플로 반환."""
@@ -127,6 +135,42 @@ def test_quadrant_axis_labels_not_quoted():
 
     assert not errors, (
         f"quadrantChart 축 레이블에 따옴표 사용 금지 ({len(errors)}건):\n"
+        + "\n".join(errors[:20])
+    )
+
+
+def test_quadrant_axis_labels_not_too_long():
+    """quadrantChart 축 레이블이 3단어 이상이면 안 된다.
+
+    Mermaid quadrantChart 파서는 축 레이블에 공백으로 구분된 단어가
+    3개 이상이면 Lexical error를 발생시킨다.
+
+    예: x-axis 서울 접근성 낮음 --> 서울 접근성 높음  (3단어, 파싱 오류)
+      → x-axis 저접근성 --> 고접근성                  (1단어, 정상)
+    """
+    max_words = 2
+    errors = []
+    for filepath, line_num, code in _extract_mermaid_blocks():
+        first_line = code.strip().split("\n")[0].strip()
+        if first_line != "quadrantChart":
+            continue
+        for i, line in enumerate(code.split("\n"), start=1):
+            match = QUADRANT_AXIS_LONG_LABEL.search(line.strip())
+            if not match:
+                continue
+            left_label = match.group(2).strip()
+            right_label = match.group(3).strip()
+            left_words = len(left_label.split())
+            right_words = len(right_label.split())
+            if left_words > max_words or right_words > max_words:
+                errors.append(
+                    f"  {filepath}:{line_num + i} → {line.strip()}"
+                    f" (좌={left_words}단어, 우={right_words}단어, 최대={max_words})"
+                )
+
+    assert not errors, (
+        f"quadrantChart 축 레이블이 너무 깁니다 ({len(errors)}건).\n"
+        "각 레이블은 공백 포함 2단어 이하로 작성하세요:\n"
         + "\n".join(errors[:20])
     )
 

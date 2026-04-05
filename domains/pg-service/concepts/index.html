@@ -1,0 +1,3333 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="결제, 디지털 자산, 규제, 비즈니스 모델, 부동산 등 도메인 지식을 정리하는 개인 위키" name="description"/>
+<link href="https://okyokwon.github.io/studyNresearch/domains/pg-service/concepts/" rel="canonical"/>
+<link href="../" rel="prev"/>
+<link href="../payment-flow/" rel="next"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>핵심 개념 - Okyo's Domain Wiki</title>
+<link href="../../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://cdn.jsdelivr.net" rel="preconnect"/>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.min.css" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet"/>
+</noscript>
+<link href="../../../stylesheets/extra.css" rel="stylesheet"/>
+<link href="../../../stylesheets/mermaid-fix.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="deep-orange" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#pg-payment-gateway-">
+          콘텐츠로 이동
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="상단/헤더" class="md-header__inner md-grid">
+<a aria-label="Okyo's Domain Wiki" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Okyo's Domain Wiki">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Okyo's Domain Wiki
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              핵심 개념
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="다크 모드로 전환" class="md-option" data-md-color-accent="deep-orange" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="다크 모드로 전환">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="라이트 모드로 전환" class="md-option" data-md-color-accent="deep-orange" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="라이트 모드로 전환">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="검색" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="검색" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="검색" class="md-search__options">
+<button aria-label="지우기" class="md-search__icon md-icon" tabindex="-1" title="지우기" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            검색 초기화
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="탭" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../..">
+        
+  
+  
+    
+  
+  홈
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../../../categories/payment/">
+          
+  
+  
+    
+  
+  결제/금융 인프라
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../categories/web3/">
+          
+  
+  
+    
+  
+  디지털 자산/Web3
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../categories/compliance/">
+          
+  
+  
+    
+  
+  규제/컴플라이언스
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../categories/business/">
+          
+  
+  
+    
+  
+  비즈니스 모델
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../categories/realestate/">
+          
+  
+  
+    
+  
+  부동산/투자
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../guide/add-domain/">
+          
+  
+  
+    
+  
+  가이드
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../../tags/">
+        
+  
+  
+    
+  
+  태그 색인
+
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="네비게이션" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Okyo's Domain Wiki" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Okyo's Domain Wiki">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Okyo's Domain Wiki
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
+<span class="md-ellipsis">
+    
+  
+    홈
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../categories/payment/">
+<span class="md-ellipsis">
+    
+  
+    결제/금융 인프라
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    결제/금융 인프라
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    
+  
+    PG (Payment Gateway)
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_2_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    PG (Payment Gateway)
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    핵심 개념
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    핵심 개념
+  
+
+    
+  </span>
+</a>
+<nav aria-label="목차" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      
+        용어 정리표
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acquiring-issuing">
+<span class="md-ellipsis">
+      
+        매입(Acquiring)과 발급(Issuing)
+      
+    </span>
+</a>
+<nav aria-label="매입(Acquiring)과 발급(Issuing)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acquiring">
+<span class="md-ellipsis">
+      
+        매입(Acquiring)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#issuing">
+<span class="md-ellipsis">
+      
+        발급(Issuing)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#settlement">
+<span class="md-ellipsis">
+      
+        정산(Settlement)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vs">
+<span class="md-ellipsis">
+      
+        인증결제 vs 비인증결제
+      
+    </span>
+</a>
+<nav aria-label="인증결제 vs 비인증결제" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#authenticated-payment">
+<span class="md-ellipsis">
+      
+        인증결제 (Authenticated Payment)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#non-authenticated-payment">
+<span class="md-ellipsis">
+      
+        비인증결제 (Non-authenticated Payment)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#billing-key">
+<span class="md-ellipsis">
+      
+        빌링키(Billing Key)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#van-value-added-network">
+<span class="md-ellipsis">
+      
+        VAN (Value Added Network)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      
+        간편결제
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pci-dss">
+<span class="md-ellipsis">
+      
+        PCI DSS
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3d-secure">
+<span class="md-ellipsis">
+      
+        3D Secure
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      
+        다음 단계
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../payment-flow/">
+<span class="md-ellipsis">
+    
+  
+    결제 플로우
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_2_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../products/">
+<span class="md-ellipsis">
+    
+  
+    대표 제품
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_2_4" id="__nav_2_2_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_2_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_2_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    대표 제품
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../products/stripe/">
+<span class="md-ellipsis">
+    
+  
+    Stripe
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../products/toss-payments/">
+<span class="md-ellipsis">
+    
+  
+    Toss Payments
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../products/nhn-kcp/">
+<span class="md-ellipsis">
+    
+  
+    NHN KCP
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../trends/">
+<span class="md-ellipsis">
+    
+  
+    트렌드
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../mor-service/">
+<span class="md-ellipsis">
+    
+  
+    MOR (Merchant of Record)
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    MOR (Merchant of Record)
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../mor-service/concepts/">
+<span class="md-ellipsis">
+    
+  
+    핵심 개념
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../mor-service/pg-vs-mor/">
+<span class="md-ellipsis">
+    
+  
+    PG vs MOR 비교
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_3_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../mor-service/products/">
+<span class="md-ellipsis">
+    
+  
+    대표 제품
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_3_4" id="__nav_2_3_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_3_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_3_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    대표 제품
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../mor-service/products/paddle/">
+<span class="md-ellipsis">
+    
+  
+    Paddle
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../mor-service/products/lemon-squeezy/">
+<span class="md-ellipsis">
+    
+  
+    Lemon Squeezy
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../mor-service/products/fastspring/">
+<span class="md-ellipsis">
+    
+  
+    FastSpring
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../mor-service/trends/">
+<span class="md-ellipsis">
+    
+  
+    트렌드
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../open-banking/">
+<span class="md-ellipsis">
+    
+  
+    오픈뱅킹 / BaaS
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    오픈뱅킹 / BaaS
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../open-banking/concepts/">
+<span class="md-ellipsis">
+    
+  
+    핵심 개념
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_4_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../open-banking/products/">
+<span class="md-ellipsis">
+    
+  
+    대표 제품
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_4_3" id="__nav_2_4_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_4_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    대표 제품
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../open-banking/products/plaid/">
+<span class="md-ellipsis">
+    
+  
+    Plaid
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../open-banking/products/unit/">
+<span class="md-ellipsis">
+    
+  
+    Unit
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../open-banking/products/korea-openbanking/">
+<span class="md-ellipsis">
+    
+  
+    한국 오픈뱅킹
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../open-banking/trends/">
+<span class="md-ellipsis">
+    
+  
+    트렌드
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../bnpl/">
+<span class="md-ellipsis">
+    
+  
+    BNPL (Buy Now Pay Later)
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    BNPL (Buy Now Pay Later)
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../bnpl/concepts/">
+<span class="md-ellipsis">
+    
+  
+    핵심 개념
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_5_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../bnpl/products/">
+<span class="md-ellipsis">
+    
+  
+    대표 제품
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_5_3" id="__nav_2_5_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_5_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_5_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    대표 제품
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../bnpl/products/klarna/">
+<span class="md-ellipsis">
+    
+  
+    Klarna
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../bnpl/products/afterpay/">
+<span class="md-ellipsis">
+    
+  
+    Afterpay
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../bnpl/products/naverpay/">
+<span class="md-ellipsis">
+    
+  
+    네이버페이 후결제
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../bnpl/trends/">
+<span class="md-ellipsis">
+    
+  
+    트렌드
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_6" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../embedded-finance/">
+<span class="md-ellipsis">
+    
+  
+    임베디드 금융 (Embedded Finance)
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    임베디드 금융 (Embedded Finance)
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../embedded-finance/concepts/">
+<span class="md-ellipsis">
+    
+  
+    핵심 개념
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_6_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../embedded-finance/products/">
+<span class="md-ellipsis">
+    
+  
+    대표 제품
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_6_3" id="__nav_2_6_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_6_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_6_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    대표 제품
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../embedded-finance/products/stripe-treasury/">
+<span class="md-ellipsis">
+    
+  
+    Stripe Treasury
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../embedded-finance/products/shopify-balance/">
+<span class="md-ellipsis">
+    
+  
+    Shopify Balance
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../embedded-finance/products/unit/">
+<span class="md-ellipsis">
+    
+  
+    Unit
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../embedded-finance/trends/">
+<span class="md-ellipsis">
+    
+  
+    트렌드
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_7" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../realtime-payment/">
+<span class="md-ellipsis">
+    
+  
+    실시간 결제 인프라
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    실시간 결제 인프라
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../realtime-payment/concepts/">
+<span class="md-ellipsis">
+    
+  
+    핵심 개념
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_7_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../realtime-payment/products/">
+<span class="md-ellipsis">
+    
+  
+    대표 시스템
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2_7_3" id="__nav_2_7_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_7_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_2_7_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    대표 시스템
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../realtime-payment/products/fednow/">
+<span class="md-ellipsis">
+    
+  
+    FedNow
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../realtime-payment/products/upi/">
+<span class="md-ellipsis">
+    
+  
+    UPI (인도)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../realtime-payment/products/pix/">
+<span class="md-ellipsis">
+    
+  
+    PIX (브라질)
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../realtime-payment/trends/">
+<span class="md-ellipsis">
+    
+  
+    트렌드
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../categories/web3/">
+<span class="md-ellipsis">
+    
+  
+    디지털 자산/Web3
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    디지털 자산/Web3
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../crypto-regulation/">
+<span class="md-ellipsis">
+    
+  
+    가상자산 규제
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    가상자산 규제
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../crypto-regulation/frameworks/">
+<span class="md-ellipsis">
+    
+  
+    규제 프레임워크
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_2_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../crypto-regulation/by-country/">
+<span class="md-ellipsis">
+    
+  
+    국가별 현황
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_2_3" id="__nav_3_2_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_2_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_2_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    국가별 현황
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../crypto-regulation/by-country/korea/">
+<span class="md-ellipsis">
+    
+  
+    한국
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../crypto-regulation/by-country/usa/">
+<span class="md-ellipsis">
+    
+  
+    미국
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../crypto-regulation/by-country/eu/">
+<span class="md-ellipsis">
+    
+  
+    EU
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../crypto-regulation/authorities/">
+<span class="md-ellipsis">
+    
+  
+    관련 기관
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../crypto-regulation/trends/">
+<span class="md-ellipsis">
+    
+  
+    트렌드
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../stablecoin-regulation/">
+<span class="md-ellipsis">
+    
+  
+    스테이블코인 규제
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    스테이블코인 규제
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../stablecoin-regulation/concepts/">
+<span class="md-ellipsis">
+    
+  
+    핵심 개념
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../stablecoin-regulation/frameworks/">
+<span class="md-ellipsis">
+    
+  
+    규제 프레임워크
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_3_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../stablecoin-regulation/by-country/">
+<span class="md-ellipsis">
+    
+  
+    국가별 현황
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_3_4" id="__nav_3_3_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_3_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_3_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    국가별 현황
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../stablecoin-regulation/by-country/korea/">
+<span class="md-ellipsis">
+    
+  
+    한국
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../stablecoin-regulation/by-country/usa/">
+<span class="md-ellipsis">
+    
+  
+    미국
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../stablecoin-regulation/by-country/eu/">
+<span class="md-ellipsis">
+    
+  
+    EU
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_3_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../stablecoin-regulation/products/">
+<span class="md-ellipsis">
+    
+  
+    주요 스테이블코인
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_3_5" id="__nav_3_3_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_3_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_3_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    주요 스테이블코인
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../stablecoin-regulation/products/usdt/">
+<span class="md-ellipsis">
+    
+  
+    USDT (Tether)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../stablecoin-regulation/products/usdc/">
+<span class="md-ellipsis">
+    
+  
+    USDC (Circle)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../stablecoin-regulation/products/dai/">
+<span class="md-ellipsis">
+    
+  
+    DAI (MakerDAO)
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../stablecoin-regulation/trends/">
+<span class="md-ellipsis">
+    
+  
+    트렌드
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../cbdc/">
+<span class="md-ellipsis">
+    
+  
+    CBDC (중앙은행 디지털화폐)
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    CBDC (중앙은행 디지털화폐)
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cbdc/concepts/">
+<span class="md-ellipsis">
+    
+  
+    핵심 개념
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_4_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../cbdc/products/">
+<span class="md-ellipsis">
+    
+  
+    주요 프로젝트
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_4_3" id="__nav_3_4_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_4_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    주요 프로젝트
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cbdc/products/digital-won/">
+<span class="md-ellipsis">
+    
+  
+    디지털 원화
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cbdc/products/e-cny/">
+<span class="md-ellipsis">
+    
+  
+    e-CNY (중국)
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cbdc/products/digital-euro/">
+<span class="md-ellipsis">
+    
+  
+    Digital Euro
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../cbdc/trends/">
+<span class="md-ellipsis">
+    
+  
+    트렌드
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sto/">
+<span class="md-ellipsis">
+    
+  
+    토큰증권 (STO)
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    토큰증권 (STO)
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sto/concepts/">
+<span class="md-ellipsis">
+    
+  
+    핵심 개념
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_5_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../sto/products/">
+<span class="md-ellipsis">
+    
+  
+    대표 플랫폼
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_5_3" id="__nav_3_5_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_5_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_5_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    대표 플랫폼
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sto/products/securitize/">
+<span class="md-ellipsis">
+    
+  
+    Securitize
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sto/products/polymath/">
+<span class="md-ellipsis">
+    
+  
+    Polymath
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sto/products/korea-sto/">
+<span class="md-ellipsis">
+    
+  
+    한국 STO
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sto/trends/">
+<span class="md-ellipsis">
+    
+  
+    트렌드
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_6" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../rwa/">
+<span class="md-ellipsis">
+    
+  
+    실물자산 토큰화 (RWA)
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    실물자산 토큰화 (RWA)
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rwa/concepts/">
+<span class="md-ellipsis">
+    
+  
+    핵심 개념
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_6_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../rwa/products/">
+<span class="md-ellipsis">
+    
+  
+    주요 플랫폼
+  
+
+    
+  </span>
+</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_6_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_6_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    주요 플랫폼
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../rwa/trends/">
+<span class="md-ellipsis">
+    
+  
+    트렌드
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_7" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../defi/">
+<span class="md-ellipsis">
+    
+  
+    DeFi 프로토콜
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    DeFi 프로토콜
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../defi/concepts/">
+<span class="md-ellipsis">
+    
+  
+    핵심 개념
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3_7_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../defi/products/">
+<span class="md-ellipsis">
+    
+  
+    대표 프로토콜
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3_7_3" id="__nav_3_7_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_7_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_3_7_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    대표 프로토콜
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../defi/products/uniswap/">
+<span class="md-ellipsis">
+    
+  
+    Uniswap
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../defi/products/aave/">
+<span class="md-ellipsis">
+    
+  
+    Aave
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../defi/products/makerdao/">
+<span class="md-ellipsis">
+    
+  
+    MakerDAO
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../defi/trends/">
+<span class="md-ellipsis">
+    
+  
+    트렌드
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../categories/compliance/">
+<span class="md-ellipsis">
+    
+  
+    규제/컴플라이언스
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    규제/컴플라이언스
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../aml-kyc/">
+<span class="md-ellipsis">
+    
+  
+    AML/KYC
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    AML/KYC
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../aml-kyc/concepts/">
+<span class="md-ellipsis">
+    
+  
+    핵심 개념
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_2_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../aml-kyc/products/">
+<span class="md-ellipsis">
+    
+  
+    대표 솔루션
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4_2_3" id="__nav_4_2_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_2_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_2_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    대표 솔루션
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../aml-kyc/products/chainalysis/">
+<span class="md-ellipsis">
+    
+  
+    Chainalysis
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../aml-kyc/products/jumio/">
+<span class="md-ellipsis">
+    
+  
+    Jumio
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../aml-kyc/products/sumsub/">
+<span class="md-ellipsis">
+    
+  
+    Sumsub
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../aml-kyc/trends/">
+<span class="md-ellipsis">
+    
+  
+    트렌드
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../data-regulation/">
+<span class="md-ellipsis">
+    
+  
+    데이터 규제 (개인정보)
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    데이터 규제 (개인정보)
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data-regulation/concepts/">
+<span class="md-ellipsis">
+    
+  
+    핵심 개념
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_3_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../data-regulation/products/">
+<span class="md-ellipsis">
+    
+  
+    주요 규제
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4_3_3" id="__nav_4_3_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_3_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_3_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    주요 규제
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data-regulation/products/gdpr/">
+<span class="md-ellipsis">
+    
+  
+    GDPR
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data-regulation/products/korea-pipa/">
+<span class="md-ellipsis">
+    
+  
+    한국 개인정보보호법
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data-regulation/products/ccpa/">
+<span class="md-ellipsis">
+    
+  
+    CCPA
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data-regulation/trends/">
+<span class="md-ellipsis">
+    
+  
+    트렌드
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../regtech/">
+<span class="md-ellipsis">
+    
+  
+    레그테크 (RegTech)
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_4_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    레그테크 (RegTech)
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../regtech/concepts/">
+<span class="md-ellipsis">
+    
+  
+    핵심 개념
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4_4_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../regtech/products/">
+<span class="md-ellipsis">
+    
+  
+    대표 솔루션
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_4_4_3" id="__nav_4_4_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_4_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_4_4_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    대표 솔루션
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../regtech/products/complyadvantage/">
+<span class="md-ellipsis">
+    
+  
+    ComplyAdvantage
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../regtech/products/sumsub/">
+<span class="md-ellipsis">
+    
+  
+    Sumsub
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../regtech/products/chainalysis-kyt/">
+<span class="md-ellipsis">
+    
+  
+    Chainalysis KYT
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../regtech/trends/">
+<span class="md-ellipsis">
+    
+  
+    트렌드
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../categories/business/">
+<span class="md-ellipsis">
+    
+  
+    비즈니스 모델
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    비즈니스 모델
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../saas-business/">
+<span class="md-ellipsis">
+    
+  
+    SaaS 비즈니스 모델
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    SaaS 비즈니스 모델
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../saas-business/concepts/">
+<span class="md-ellipsis">
+    
+  
+    핵심 개념
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_2_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../saas-business/products/">
+<span class="md-ellipsis">
+    
+  
+    대표 사례
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5_2_3" id="__nav_5_2_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_2_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_5_2_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    대표 사례
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../saas-business/products/notion/">
+<span class="md-ellipsis">
+    
+  
+    Notion
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../saas-business/products/figma/">
+<span class="md-ellipsis">
+    
+  
+    Figma
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../saas-business/products/slack/">
+<span class="md-ellipsis">
+    
+  
+    Slack
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../saas-business/trends/">
+<span class="md-ellipsis">
+    
+  
+    트렌드
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../platform-economy/">
+<span class="md-ellipsis">
+    
+  
+    플랫폼 이코노미
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    플랫폼 이코노미
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../platform-economy/concepts/">
+<span class="md-ellipsis">
+    
+  
+    핵심 개념
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5_3_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../platform-economy/products/">
+<span class="md-ellipsis">
+    
+  
+    대표 플랫폼
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_5_3_3" id="__nav_5_3_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_3_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_5_3_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    대표 플랫폼
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../platform-economy/products/baemin/">
+<span class="md-ellipsis">
+    
+  
+    배달의민족
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../platform-economy/products/uber/">
+<span class="md-ellipsis">
+    
+  
+    Uber
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../platform-economy/products/airbnb/">
+<span class="md-ellipsis">
+    
+  
+    Airbnb
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../platform-economy/trends/">
+<span class="md-ellipsis">
+    
+  
+    트렌드
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../../categories/realestate/">
+<span class="md-ellipsis">
+    
+  
+    부동산/투자
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    부동산/투자
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../real-estate-investment/">
+<span class="md-ellipsis">
+    
+  
+    부동산 투자
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    부동산 투자
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../real-estate-investment/concepts/">
+<span class="md-ellipsis">
+    
+  
+    핵심 개념
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_2_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../real-estate-investment/products/">
+<span class="md-ellipsis">
+    
+  
+    대표 프로젝트
+  
+
+    
+  </span>
+</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_2_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_6_2_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    대표 프로젝트
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../real-estate-investment/trends/">
+<span class="md-ellipsis">
+    
+  
+    트렌드
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../yongin-platform-city/">
+<span class="md-ellipsis">
+    
+  
+    용인플랫폼시티
+  
+
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    용인플랫폼시티
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../yongin-platform-city/concepts/">
+<span class="md-ellipsis">
+    
+  
+    핵심 개념
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../yongin-platform-city/presale/">
+<span class="md-ellipsis">
+    
+  
+    분양 정보
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../yongin-platform-city/products/">
+<span class="md-ellipsis">
+    
+  
+    주변 프로젝트 비교
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../yongin-platform-city/trends/">
+<span class="md-ellipsis">
+    
+  
+    개발 현황·투자 분석
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    가이드
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    가이드
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../guide/add-domain/">
+<span class="md-ellipsis">
+    
+  
+    도메인 추가 가이드
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../guide/ai-templates/">
+<span class="md-ellipsis">
+    
+  
+    AI 프롬프트 템플릿
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tags/">
+<span class="md-ellipsis">
+    
+  
+    태그 색인
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="목차" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      
+        용어 정리표
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acquiring-issuing">
+<span class="md-ellipsis">
+      
+        매입(Acquiring)과 발급(Issuing)
+      
+    </span>
+</a>
+<nav aria-label="매입(Acquiring)과 발급(Issuing)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acquiring">
+<span class="md-ellipsis">
+      
+        매입(Acquiring)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#issuing">
+<span class="md-ellipsis">
+      
+        발급(Issuing)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#settlement">
+<span class="md-ellipsis">
+      
+        정산(Settlement)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vs">
+<span class="md-ellipsis">
+      
+        인증결제 vs 비인증결제
+      
+    </span>
+</a>
+<nav aria-label="인증결제 vs 비인증결제" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#authenticated-payment">
+<span class="md-ellipsis">
+      
+        인증결제 (Authenticated Payment)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#non-authenticated-payment">
+<span class="md-ellipsis">
+      
+        비인증결제 (Non-authenticated Payment)
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#billing-key">
+<span class="md-ellipsis">
+      
+        빌링키(Billing Key)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#van-value-added-network">
+<span class="md-ellipsis">
+      
+        VAN (Value Added Network)
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      
+        간편결제
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#pci-dss">
+<span class="md-ellipsis">
+      
+        PCI DSS
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3d-secure">
+<span class="md-ellipsis">
+      
+        3D Secure
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      
+        다음 단계
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<nav aria-label="네비게이션" class="md-path">
+<ol class="md-path__list">
+<li class="md-path__item">
+<a class="md-path__link" href="../../..">
+<span class="md-ellipsis">
+    홈
+  </span>
+</a>
+</li>
+<li class="md-path__item">
+<a class="md-path__link" href="../../../categories/payment/">
+<span class="md-ellipsis">
+    결제/금융 인프라
+  </span>
+</a>
+</li>
+<li class="md-path__item">
+<a class="md-path__link" href="../">
+<span class="md-ellipsis">
+    PG (Payment Gateway)
+  </span>
+</a>
+</li>
+</ol>
+</nav>
+<article class="md-content__inner md-typeset">
+<nav class="md-tags">
+<a class="md-tag" href="../../../tags/#tag:pg">PG</a>
+<a class="md-tag" href="../../../tags/#tag:결제">결제</a>
+</nav>
+<h1 id="pg-payment-gateway-">PG (Payment Gateway) - 핵심 개념<a class="headerlink" href="#pg-payment-gateway-" title="Permanent link">¶</a></h1>
+<blockquote>
+<p>PG 도메인을 이해하기 위한 필수 용어와 개념을 정리한다. 각 개념의 정의, 중요성, 실제 예시를 포함한다.</p>
+</blockquote>
+<p><a href="../">&lt; PG (Payment Gateway) 개요로 돌아가기</a></p>
+<hr/>
+<h2 id="_1">용어 정리표<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>용어</th>
+<th>영문</th>
+<th>한줄 정의</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>매입</td>
+<td>Acquiring</td>
+<td>카드사가 가맹점 매출 전표를 접수하고 대금을 정산하는 과정</td>
+</tr>
+<tr>
+<td>발급</td>
+<td>Issuing</td>
+<td>카드사가 소비자에게 카드를 발급하고 관리하는 역할</td>
+</tr>
+<tr>
+<td>정산</td>
+<td>Settlement</td>
+<td>PG/카드사가 가맹점에 수수료를 제외한 매출 대금을 지급하는 과정</td>
+</tr>
+<tr>
+<td>인증결제</td>
+<td>Authenticated Payment</td>
+<td>본인인증(ISP, 안심클릭 등)을 거친 후 승인하는 결제</td>
+</tr>
+<tr>
+<td>비인증결제</td>
+<td>Non-authenticated Payment</td>
+<td>별도의 본인인증 없이 카드번호·유효기간 등으로 승인하는 결제</td>
+</tr>
+<tr>
+<td>빌링키</td>
+<td>Billing Key</td>
+<td>정기결제를 위해 카드 정보 대신 사용하는 PG 발급 토큰</td>
+</tr>
+<tr>
+<td>VAN</td>
+<td>Value Added Network</td>
+<td>카드 승인 전문을 카드사에 중계하는 부가가치통신망</td>
+</tr>
+<tr>
+<td>간편결제</td>
+<td>Easy Payment</td>
+<td>사전 등록된 결제수단으로 간소화된 인증만으로 결제</td>
+</tr>
+<tr>
+<td>PCI DSS</td>
+<td>Payment Card Industry Data Security Standard</td>
+<td>카드 데이터 보안 국제 표준</td>
+</tr>
+<tr>
+<td>3D Secure</td>
+<td>3-Domain Secure</td>
+<td>온라인 카드 결제 시 추가 본인인증 프로토콜</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="acquiring-issuing">매입(Acquiring)과 발급(Issuing)<a class="headerlink" href="#acquiring-issuing" title="Permanent link">¶</a></h2>
+<h3 id="acquiring">매입(Acquiring)<a class="headerlink" href="#acquiring" title="Permanent link">¶</a></h3>
+<p><strong>정의</strong>: 카드 결제에서 가맹점 측을 담당하는 역할이다. 매입사(Acquirer)는 가맹점과 계약을 맺고, 카드 매출 전표를 접수하며, 가맹점에 대금을 정산한다.</p>
+<p><strong>왜 중요한가</strong>: PG가 결제를 중계하더라도, 최종적으로 자금을 이동시키는 것은 매입사다. 매입 구조를 이해해야 정산 주기, 수수료율, 차지백 처리 흐름을 파악할 수 있다.</p>
+<p><strong>실제 예시</strong>: 한국에서는 카드사가 매입과 발급을 동시에 수행한다(겸영 구조). 예를 들어 삼성카드는 카드를 발급하면서 동시에 가맹점 매출도 매입한다. 반면 해외에서는 Visa/Mastercard 네트워크 위에 매입사(Worldpay, Adyen 등)와 발급사(Chase, Barclays 등)가 분리되어 있다.</p>
+<h3 id="issuing">발급(Issuing)<a class="headerlink" href="#issuing" title="Permanent link">¶</a></h3>
+<p><strong>정의</strong>: 소비자에게 카드를 발급하고, 결제 승인·한도 관리·청구를 담당하는 역할이다.</p>
+<p><strong>왜 중요한가</strong>: 결제 승인 여부는 발급사가 결정한다. 카드 한도 초과, 분실 신고, 해외결제 차단 등의 이유로 승인이 거절되면 PG를 통한 결제도 실패한다.</p>
+<p><strong>실제 예시</strong>: 소비자가 신한카드를 사용해 쿠팡에서 결제하면, 신한카드가 발급사 역할을 하며 해당 거래의 승인 여부를 결정한다.</p>
+<hr/>
+<h2 id="settlement">정산(Settlement)<a class="headerlink" href="#settlement" title="Permanent link">¶</a></h2>
+<p><strong>정의</strong>: 결제가 완료된 거래에 대해 PG사 또는 카드사가 수수료를 제외한 금액을 가맹점 계좌로 입금하는 과정이다.</p>
+<p><strong>왜 중요한가</strong>: 정산 주기(D+N)와 수수료율은 가맹점의 현금 흐름에 직접적인 영향을 준다. 스타트업에게 정산 주기 1일 차이가 자금 운용에 큰 영향을 줄 수 있다.</p>
+<p><strong>정산 흐름</strong>:</p>
+<ol>
+<li>카드사가 매출 전표를 매입 처리</li>
+<li>카드사가 PG사에 수수료를 제외한 금액을 지급 (보통 D+2~D+3)</li>
+<li>PG사가 자체 수수료를 제외한 금액을 가맹점에 지급</li>
+</ol>
+<p><strong>실제 예시</strong>: Toss Payments는 D+1 정산(영업일 기준 다음 날 입금)을 제공하며, 이는 자금 회전이 빠른 소규모 가맹점에 큰 장점이다. 반면 전통 PG는 D+3~D+5 정산이 일반적이다.</p>
+<div class="admonition tip">
+<p class="admonition-title">정산 주기 표기법</p>
+<p>D+N에서 D는 결제 발생일(Day), N은 영업일 기준 소요일수를 의미한다.
+D+1이면 결제 다음 영업일에 정산, D+3이면 3영업일 후 정산이다.</p>
+</div>
+<hr/>
+<h2 id="vs">인증결제 vs 비인증결제<a class="headerlink" href="#vs" title="Permanent link">¶</a></h2>
+<h3 id="authenticated-payment">인증결제 (Authenticated Payment)<a class="headerlink" href="#authenticated-payment" title="Permanent link">¶</a></h3>
+<p><strong>정의</strong>: 결제 과정에서 카드 소유자의 본인인증을 거친 후 승인하는 방식이다. 한국에서는 ISP(인터넷안전결제), 안심클릭, 간편결제 인증 등이 해당된다.</p>
+<p><strong>왜 중요한가</strong>: 본인인증을 거치므로 부정결제 위험이 낮고, 차지백 시 가맹점의 책임이 줄어든다. 한국 전자금융거래법에서는 30만원 이상 결제 시 본인인증을 의무화하고 있다.</p>
+<p><strong>실제 예시</strong>: 고객이 온라인 쇼핑몰에서 50만원짜리 상품을 카드 결제하면, PG사 결제창에서 카드 선택 후 카드사 앱으로 이동하여 비밀번호·생체인증으로 본인확인을 거친다.</p>
+<h3 id="non-authenticated-payment">비인증결제 (Non-authenticated Payment)<a class="headerlink" href="#non-authenticated-payment" title="Permanent link">¶</a></h3>
+<p><strong>정의</strong>: 별도의 본인인증 절차 없이 카드번호, 유효기간, CVC 등 카드 정보만으로 승인하는 방식이다. 정기결제(구독), 키인결제(Key-in)가 대표적이다.</p>
+<p><strong>왜 중요한가</strong>: 사용자 경험이 간편하지만, 부정결제 위험이 높아 PCI DSS 준수가 필수적이다. 정기결제 서비스(넷플릭스, SaaS 등)에서 주로 사용한다.</p>
+<p><strong>실제 예시</strong>: 넷플릭스 구독 시 최초 1회만 카드를 등록하면, 이후 매월 빌링키를 이용해 자동으로 비인증결제가 이루어진다.</p>
+<hr/>
+<h2 id="billing-key">빌링키(Billing Key)<a class="headerlink" href="#billing-key" title="Permanent link">¶</a></h2>
+<p><strong>정의</strong>: PG사가 카드 정보를 안전하게 저장한 뒤 발급하는 <strong>카드 대체 토큰</strong>이다. 가맹점은 실제 카드번호를 보관하지 않고 빌링키만으로 반복 결제를 요청할 수 있다.</p>
+<p><strong>왜 중요한가</strong>:</p>
+<ul>
+<li><strong>보안</strong>: 가맹점이 카드번호를 직접 저장하지 않아 PCI DSS 부담이 줄어든다</li>
+<li><strong>편의성</strong>: 정기결제·원클릭 결제 구현의 핵심 수단이다</li>
+<li><strong>유효성</strong>: 카드 갱신/분실 시 빌링키가 무효화될 수 있어 관리 로직이 필요하다</li>
+</ul>
+<p><strong>실제 예시</strong>: SaaS 서비스가 Toss Payments API로 빌링키를 발급받으면, 매월 결제일에 해당 빌링키로 <code>POST /billing/payments</code> 요청만 보내면 자동 결제가 된다.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>[카드번호 등록] → [PG가 빌링키 발급: billing_key_abc123] → [매월 빌링키로 결제 요청]
+</code></pre></div>
+<hr/>
+<h2 id="van-value-added-network">VAN (Value Added Network)<a class="headerlink" href="#van-value-added-network" title="Permanent link">¶</a></h2>
+<p><strong>정의</strong>: 카드 승인 <strong>전문(전자문서)</strong>을 가맹점/PG에서 카드사로 중계하는 부가가치통신망이다. 한국 고유의 결제 인프라 계층이다.</p>
+<p><strong>왜 중요한가</strong>: 한국 결제 시스템의 독특한 구조를 이해하는 핵심이다. 해외에는 PG가 카드 네트워크(Visa, Mastercard)에 직접 연결되지만, 한국에서는 PG → VAN → 카드사 구조가 일반적이다.</p>
+<p><strong>주요 VAN사</strong>: NICE정보통신, KIS정보통신, KSNET, 스마트로, 코밴 등</p>
+<p><strong>실제 예시</strong>: 고객이 NHN KCP를 통해 카드 결제를 하면, KCP는 VAN사(예: NICE정보통신)를 경유하여 카드사에 승인 요청 전문을 보낸다. VAN사는 전문을 중계하고 건당 수수료(약 15~25원)를 받는다.</p>
+<pre class="mermaid"><code>graph LR
+    A[가맹점] --&gt; B[PG사]
+    B --&gt; C[VAN사]
+    C --&gt; D[카드사]
+    D --&gt; C
+    C --&gt; B
+    B --&gt; A
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">VAN의 미래</p>
+<p>최근 PG사들이 VAN을 거치지 않고 카드사와 직접 연결(직접 매입)하는 추세가 늘고 있다.
+토스페이먼츠는 자체 VAN 라이선스를 보유하여 VAN 중계 수수료를 절감하고 있다.</p>
+</div>
+<hr/>
+<h2 id="_2">간편결제<a class="headerlink" href="#_2" title="Permanent link">¶</a></h2>
+<p><strong>정의</strong>: 카드·계좌 정보를 사전에 등록한 뒤, 결제 시에는 비밀번호·생체인증·PIN 등 간소화된 인증만으로 결제를 완료하는 방식이다.</p>
+<p><strong>왜 중요한가</strong>: 결제 전환율을 크게 높인다. 기존 카드 인증결제 대비 결제 단계가 줄어 이탈률이 감소하며, 모바일 환경에 최적화되어 있다. 2024년 기준 한국 온라인 결제의 약 60% 이상이 간편결제를 통해 이루어진다.</p>
+<p><strong>주요 서비스</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>간편결제</th>
+<th>운영사</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>토스페이</td>
+<td>비바리퍼블리카</td>
+<td>토스 앱 기반, 높은 사용자 수</td>
+</tr>
+<tr>
+<td>네이버페이</td>
+<td>네이버파이낸셜</td>
+<td>네이버 생태계 연동, 포인트 적립</td>
+</tr>
+<tr>
+<td>카카오페이</td>
+<td>카카오페이</td>
+<td>카카오톡 기반, 송금·결제 통합</td>
+</tr>
+<tr>
+<td>삼성페이</td>
+<td>삼성전자</td>
+<td>MST+NFC 오프라인 결제, 온라인 확장</td>
+</tr>
+<tr>
+<td>페이코</td>
+<td>NHN</td>
+<td>포인트 기반 혜택, 다양한 제휴</td>
+</tr>
+</tbody>
+</table>
+<p><strong>실제 예시</strong>: 쇼핑몰에서 결제 시 "네이버페이로 결제" 버튼을 누르면, 네이버 인증(비밀번호 또는 생체인증) 한 단계만으로 결제가 완료된다. PG사는 네이버페이의 결제 결과를 수신하여 가맹점에 전달한다.</p>
+<hr/>
+<h2 id="pci-dss">PCI DSS<a class="headerlink" href="#pci-dss" title="Permanent link">¶</a></h2>
+<p><strong>정의</strong>: <strong>Payment Card Industry Data Security Standard</strong> — Visa, Mastercard, AMEX, JCB, Discover가 공동으로 제정한 카드 데이터 보안 국제 표준이다. 카드 정보를 저장·처리·전송하는 모든 조직이 준수해야 한다.</p>
+<p><strong>왜 중요한가</strong>: PCI DSS를 준수하지 않으면 카드사와 계약이 불가능하거나 벌금이 부과된다. 가맹점이 PG를 사용하는 주요 이유 중 하나가 PCI DSS 부담을 PG사에 위임하기 위해서다.</p>
+<p><strong>핵심 요구사항 (12가지 중 주요 항목)</strong>:</p>
+<ol>
+<li>방화벽 설치·유지</li>
+<li>카드 데이터 암호화 저장</li>
+<li>카드 데이터 전송 시 암호화</li>
+<li>접근 권한 최소화</li>
+<li>정기적 보안 테스트</li>
+<li>보안 정책 유지</li>
+</ol>
+<p><strong>인증 레벨</strong>: 연간 카드 거래 건수에 따라 Level 1(600만 건 이상)~Level 4로 나뉘며, Level 1은 외부 감사(QSA)가 필수다.</p>
+<p><strong>실제 예시</strong>: 스타트업이 자체적으로 카드번호를 저장하려면 PCI DSS Level 1 인증이 필요하고, 이는 수억 원의 비용과 수개월의 시간이 든다. 대신 Stripe나 Toss Payments를 사용하면 카드 정보가 PG 서버에만 저장되므로 가맹점의 PCI DSS 범위가 대폭 줄어든다.</p>
+<hr/>
+<h2 id="3d-secure">3D Secure<a class="headerlink" href="#3d-secure" title="Permanent link">¶</a></h2>
+<p><strong>정의</strong>: 온라인 카드 결제 시 카드사(발급사)가 추가 본인인증을 수행하는 프로토콜이다. Visa의 "Verified by Visa", Mastercard의 "SecureCode"가 대표적이다. 현재 <strong>3DS 2.0</strong> 버전이 표준이다.</p>
+<p><strong>왜 중요한가</strong>:</p>
+<ul>
+<li><strong>부정결제 방지</strong>: 카드 도용 시에도 발급사의 추가 인증으로 차단 가능</li>
+<li><strong>책임 전환(Liability Shift)</strong>: 3DS 인증을 거치면 부정결제 발생 시 책임이 가맹점에서 발급사로 전환됨</li>
+<li><strong>EU 규제 필수</strong>: 유럽의 PSD2(결제서비스지침) 강화인증(SCA) 요건을 충족하려면 3DS 적용이 필수</li>
+</ul>
+<p><strong>3DS 1.0 vs 3DS 2.0</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>3DS 1.0</th>
+<th>3DS 2.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>사용자 경험</td>
+<td>별도 팝업 리다이렉트</td>
+<td>인앱/인라인 인증</td>
+</tr>
+<tr>
+<td>인증 방식</td>
+<td>비밀번호 고정</td>
+<td>리스크 기반(생체, OTP 등)</td>
+</tr>
+<tr>
+<td>모바일 지원</td>
+<td>미흡</td>
+<td>최적화</td>
+</tr>
+<tr>
+<td>데이터 활용</td>
+<td>제한적</td>
+<td>100개 이상 데이터 포인트 분석</td>
+</tr>
+</tbody>
+</table>
+<p><strong>실제 예시</strong>: 해외 쇼핑몰에서 Stripe으로 결제하면, 리스크 수준에 따라 3DS 2.0 챌린지가 발동된다. 저위험 거래는 <strong>Frictionless Flow</strong>로 추가 인증 없이 통과하고, 고위험 거래만 SMS OTP나 앱 인증을 요구한다.</p>
+<hr/>
+<h2 id="_3">다음 단계<a class="headerlink" href="#_3" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../payment-flow/">결제 플로우</a>에서 이 개념들이 실제로 어떻게 연결되는지 확인</li>
+<li><a href="../products/">제품 비교</a>에서 각 PG가 이 개념들을 어떻게 구현하는지 비교</li>
+</ul>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  맨위로
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2025 Okyo
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://github.com/OkyoKwon/studyNresearch" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<div class="md-progress" data-md-component="progress" role="progressbar"></div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.instant", "navigation.instant.progress", "navigation.path", "navigation.indexes", "toc.follow", "search.suggest", "search.highlight", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+<script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+<script src="../../../javascripts/tabs-dropdown.js"></script>
+<script type="module">import mermaid from "https://unpkg.com/mermaid@10.4.0/dist/mermaid.esm.min.mjs";
+window.mermaidConfig = {default: {
+    startOnLoad: false
+}};</script></body>
+</html>

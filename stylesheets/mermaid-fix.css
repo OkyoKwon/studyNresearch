@@ -1,0 +1,62 @@
+/* Mermaid 다이어그램 다크모드 텍스트 가독성 수정 */
+
+/* ========================================
+   1. 도형 안 텍스트 → 진한 색 (밝은 배경 위)
+   ======================================== */
+[data-md-color-scheme="slate"] .mermaid .node .label,
+[data-md-color-scheme="slate"] .mermaid .node text,
+[data-md-color-scheme="slate"] .mermaid .taskText,
+[data-md-color-scheme="slate"] .mermaid .noteText,
+[data-md-color-scheme="slate"] .mermaid .actor,
+[data-md-color-scheme="slate"] .mermaid .labelBox text,
+[data-md-color-scheme="slate"] .mermaid .cluster-label text,
+[data-md-color-scheme="slate"] .mermaid .legend text,
+[data-md-color-scheme="slate"] .mermaid .timeline-text,
+[data-md-color-scheme="slate"] .mermaid .event-text,
+[data-md-color-scheme="slate"] .mermaid .period-text,
+[data-md-color-scheme="slate"] .mermaid .edgeLabel {
+  fill: #1a1a1a !important;
+  color: #1a1a1a !important;
+}
+
+/* ========================================
+   2. 도형 밖 텍스트 → 밝은 색 (어두운 배경 위)
+      제목, 축 라벨, 섹션 타이틀 등
+   ======================================== */
+/* ========================================
+   2-a. quadrantChart 다크모드 가시성
+        Mermaid가 inline fill로 어두운 색을 하드코딩하므로
+        !important로 오버라이드해야 한다
+   ======================================== */
+[data-md-color-scheme="slate"] .mermaid .quadrant text,
+[data-md-color-scheme="slate"] .mermaid .data-point text,
+[data-md-color-scheme="slate"] .mermaid .label text,
+[data-md-color-scheme="slate"] .mermaid .title text {
+  fill: #e0e0e0 !important;
+  color: #e0e0e0 !important;
+}
+
+/* quadrantChart 사분면 배경을 다크모드에 맞게 조정 */
+[data-md-color-scheme="slate"] .mermaid .quadrant rect {
+  opacity: 0.6 !important;
+}
+
+/* ========================================
+   2-b. 도형 밖 텍스트 → 밝은 색 (어두운 배경 위)
+        제목, 축 라벨, 섹션 타이틀 등
+   ======================================== */
+[data-md-color-scheme="slate"] .mermaid .titleText,
+[data-md-color-scheme="slate"] .mermaid .timelineTitle,
+[data-md-color-scheme="slate"] .mermaid text.timelineTitle,
+[data-md-color-scheme="slate"] .mermaid .sectionTitle,
+[data-md-color-scheme="slate"] .mermaid .loopText,
+[data-md-color-scheme="slate"] .mermaid .messageText,
+[data-md-color-scheme="slate"] .mermaid .labelText,
+[data-md-color-scheme="slate"] .mermaid > svg > g > text,
+[data-md-color-scheme="slate"] .mermaid text.title,
+[data-md-color-scheme="slate"] .mermaid .axis text,
+[data-md-color-scheme="slate"] .mermaid .pieTitleText,
+[data-md-color-scheme="slate"] .mermaid .slice text {
+  fill: #e0e0e0 !important;
+  color: #e0e0e0 !important;
+}

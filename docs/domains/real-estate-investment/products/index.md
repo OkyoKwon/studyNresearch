@@ -32,7 +32,7 @@ search:
 ```mermaid
 quadrantChart
     title 수도권 신도시 — 서울 접근성 vs 개발 규모
-    x-axis 서울 접근성 낮음 --> 서울 접근성 높음
+    x-axis 저접근성 --> 고접근성
     y-axis 소규모 --> 대규모
     quadrant-1 대규모·고접근성
     quadrant-2 대규모·저접근성

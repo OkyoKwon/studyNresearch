@@ -26,7 +26,7 @@ quadrantChart
     Shopify Balance: [0.4, 0.3]
     Unit: [0.8, 0.5]
     Goldman TxB: [0.7, 0.9]
-    토스: [0.9, 0.2]
+    Toss: [0.9, 0.2]
 ```
 
 ## 개별 제품 강점 / 약점 / 차별화

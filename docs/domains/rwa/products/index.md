@@ -37,10 +37,10 @@ quadrantChart
     title RWA 플랫폼 — DeFi 네이티브 vs TradFi 연계
     x-axis DeFi 네이티브 --> TradFi 연계
     y-axis Small Scale --> Large Scale
-    quadrant-1 대규모·TradFi
-    quadrant-2 대규모·DeFi
-    quadrant-3 소규모·DeFi
-    quadrant-4 소규모·TradFi
+    quadrant-1 Large + TradFi
+    quadrant-2 Large + DeFi
+    quadrant-3 Small + DeFi
+    quadrant-4 Small + TradFi
     Centrifuge: [0.30, 0.35]
     Ondo Finance: [0.55, 0.65]
     Maple Finance: [0.35, 0.25]

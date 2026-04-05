@@ -34,16 +34,16 @@ quadrantChart
     title Access vs Scale
     x-axis Low Access --> High Access
     y-axis Small Scale --> Large Scale
-    quadrant-1 대규모·고접근성
-    quadrant-2 대규모·저접근성
-    quadrant-3 소규모·저접근성
-    quadrant-4 소규모·고접근성
-    남양주 왕숙: [0.45, 0.85]
-    하남 교산: [0.75, 0.45]
-    인천 계양: [0.50, 0.20]
-    고양 창릉: [0.70, 0.55]
-    부천 대장: [0.72, 0.25]
-    용인플랫폼시티: [0.35, 0.90]
+    quadrant-1 Large + High Access
+    quadrant-2 Large + Low Access
+    quadrant-3 Small + Low Access
+    quadrant-4 Small + High Access
+    Wangsuk: [0.45, 0.85]
+    Gyosan: [0.75, 0.45]
+    Gyeyang: [0.50, 0.20]
+    Changneung: [0.70, 0.55]
+    Daejang: [0.72, 0.25]
+    Yongin Platform: [0.35, 0.90]
 ```
 
 !!! info "용인플랫폼시티의 포지션"

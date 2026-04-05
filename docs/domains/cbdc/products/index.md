@@ -39,13 +39,13 @@ quadrantChart
     title CBDC 프로젝트 성숙도 vs 인구 규모
     x-axis Early Research --> Full Launch
     y-axis Small Economy --> Large Economy
-    quadrant-1 대규모·성숙
-    quadrant-2 대규모·초기
-    quadrant-3 소규모·초기
-    quadrant-4 소규모·성숙
+    quadrant-1 Large + Mature
+    quadrant-2 Large + Early
+    quadrant-3 Small + Early
+    quadrant-4 Small + Mature
     e-CNY: [0.75, 0.95]
     Digital Euro: [0.45, 0.80]
-    디지털 원화: [0.50, 0.60]
+    Digital Won: [0.50, 0.60]
     e-Naira: [0.85, 0.70]
     Sand Dollar: [0.90, 0.10]
     DCash: [0.85, 0.08]

@@ -38,14 +38,14 @@ quadrantChart
     title STO 플랫폼 — 규제 성숙도 vs 시장 규모
     x-axis Early Stage --> Mature Regulation
     y-axis Small Scale --> Large Scale
-    quadrant-1 대규모·성숙
-    quadrant-2 대규모·초기
-    quadrant-3 소규모·초기
-    quadrant-4 소규모·성숙
+    quadrant-1 Large + Mature
+    quadrant-2 Large + Early
+    quadrant-3 Small + Early
+    quadrant-4 Small + Mature
     Securitize: [0.85, 0.90]
     tZERO: [0.75, 0.45]
     Polymath: [0.70, 0.50]
-    한국 STO: [0.55, 0.40]
+    Korea STO: [0.55, 0.40]
     Harbor: [0.60, 0.15]
 ```
 

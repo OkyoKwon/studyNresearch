@@ -214,6 +214,48 @@ def test_quadrant_axis_labels_not_pure_korean():
     )
 
 
+def test_quadrant_no_pure_korean_anywhere():
+    """quadrantChart 내 모든 텍스트(사분면 이름, 포인트 이름)에 순수 한글이 없어야 한다.
+
+    Mermaid quadrantChart JISON 파서는 비ASCII 문자를 제대로 처리하지 못한다.
+    title은 예외적으로 한글이 가능하지만, 그 외 모든 요소는 영문을 포함해야 한다.
+    """
+    # quadrant-N, 포인트 이름 매칭
+    quadrant_name = re.compile(r"quadrant-[1-4]\s+(.+)")
+    point_name = re.compile(r"^\s+([^:\[]+):\s*\[")
+
+    errors = []
+    for filepath, line_num, code in _extract_mermaid_blocks():
+        first_line = code.strip().split("\n")[0].strip()
+        if first_line != "quadrantChart":
+            continue
+        for i, line in enumerate(code.split("\n"), start=1):
+            stripped = line.strip()
+            # title, x-axis, y-axis는 다른 테스트에서 커버
+            if stripped.startswith(("title", "x-axis", "y-axis")):
+                continue
+
+            label = None
+            m = quadrant_name.match(stripped)
+            if m:
+                label = m.group(1).strip()
+            else:
+                m = point_name.match(line)
+                if m:
+                    label = m.group(1).strip()
+
+            if label and KOREAN_ONLY_LABEL.match(label):
+                errors.append(
+                    f"  {filepath}:{line_num + i} → {stripped}"
+                )
+
+    assert not errors, (
+        f"quadrantChart 내 순수 한글 텍스트 ({len(errors)}건).\n"
+        "사분면 이름·포인트 이름은 영문을 포함하세요:\n"
+        + "\n".join(errors[:20])
+    )
+
+
 def test_mermaid_blocks_have_diagram_type():
     """모든 Mermaid 블록이 유효한 다이어그램 타입으로 시작해야 한다."""
     valid_types = {

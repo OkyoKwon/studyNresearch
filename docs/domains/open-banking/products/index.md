@@ -27,7 +27,7 @@ quadrantChart
     Plaid: [0.3, 0.7]
     Unit: [0.8, 0.4]
     Column: [0.85, 0.3]
-    한국 오픈뱅킹: [0.4, 0.2]
+    Korea OpenBanking: [0.4, 0.2]
     Tink: [0.35, 0.75]
     TrueLayer: [0.45, 0.65]
 ```

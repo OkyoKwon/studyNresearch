@@ -73,6 +73,7 @@ graph TD
 
 ## 관련 도메인
 
+- [용인플랫폼시티](../yongin-platform-city/index.md) — 차세대 플랫폼시티, SK하이닉스 클러스터 배후 자족도시
 - [실물자산 토큰화 (RWA)](../rwa/index.md) — 부동산 토큰화, 조각투자 플랫폼 (RealT, 카사, 펀블)
 - [토큰증권 (STO)](../sto/index.md) — 부동산 수익증권의 토큰화 발행 메커니즘
 

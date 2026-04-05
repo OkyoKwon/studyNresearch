@@ -12,4 +12,12 @@
 
     [바로가기 :material-arrow-right:](../../domains/real-estate-investment/index.md)
 
+-   :material-map-marker-radius-outline:{ .lg .middle } **용인플랫폼시티**
+
+    ---
+
+    자율주행·데이터 기반 차세대 플랫폼시티. SK하이닉스 클러스터 배후 자족도시, 개발 현황·투자 분석.
+
+    [바로가기 :material-arrow-right:](../../domains/yongin-platform-city/index.md)
+
 </div>
